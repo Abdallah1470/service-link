@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "451988423262",
+    "project_id": "service-link-c30c1",
+    "storage_bucket": "service-link-c30c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451988423262:android:acf05ff6bafcffd4eaeacf",
+        "android_client_info": {
+          "package_name": "com.depi.service_link"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBimNwZdgs9EuJWwHnc7maxMgR9Wg2OD3U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
