@@ -1,4 +1,4 @@
-package com.example.service_link
+package com.depi.service_link
 
 import io.flutter.embedding.android.FlutterActivity
 

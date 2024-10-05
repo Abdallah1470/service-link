@@ -48,7 +48,10 @@ dependencies:
   flutter_rating_bar: ^4.0.1 # For the rating system
   intl: ^0.19.0 # For date formatting
   flutter_svg: ^2.0.10+1 # For SVG images
-
+  lottie: ^3.1.2 # For Lottie animations
+  smooth_page_indicator: ^1.2.0+3 # For page indicators
+  quickalert: ^1.1.0 # For custom alerts
+  timeago: ^3.7.0 # For time ago formatting
 
 dev_dependencies:
   flutter_test:
@@ -66,9 +69,9 @@ dev_dependencies:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/images/image.png" # Set this to the path of your icon image
+  image_path: "assets/images/app_icon.jpg" # Set this to the path of your icon image
   adaptive_icon_background: "#FFFFFF" # Optional: background color for Android adaptive icon
-  adaptive_icon_foreground: "assets/images/image.png" # Set this for Android adaptive icon
+  adaptive_icon_foreground: "assets/images/app_icon.jpg" # Set this for Android adaptive icon
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -82,9 +85,21 @@ flutter:
   generate: true
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/icons/google.svg
+    - assets/icons/facebook.svg
     - assets/images/app_icon.jpg
     - assets/images/chain.png
     - assets/images/image.png
+    - assets/images/img.png
+    - assets/animations/welcome_animation.json
+    - assets/animations/features_animation.json
+    - assets/animations/how_it_works_animation.json
+    - assets/animations/get_started_animation.json
+    - assets/images/
+    - assets/icons/
+    - assets/animations/
+    - assets/
+    - assets/fonts/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
