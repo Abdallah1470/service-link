@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:service_link/data/models/order_model.dart' as order_model;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -213,28 +214,35 @@ class AuthViewModel extends StateNotifier<AuthState> {
   }
 
   Future<void> _saveUserToFirestore(User user) async {
-    try {
-      DocumentSnapshot doc = await FirebaseFirestore.instance
-          .collection('users')
-          .doc(user.uid) // Use UID as document ID
-          .get();
+  try {
+    DocumentSnapshot doc = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(user.uid)
+        .get();
 
-      if (!doc.exists) {
-        // If the user document does not exist, create it
-        await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
-          'name': user.displayName ?? 'No Name',
-          'email': user.email,
-          'role': 'user',
-          'registrationDate': FieldValue.serverTimestamp(),
-        });
-        log("User saved to Firestore!");
-      } else {
-        log("User already exists in Firestore.");
-      }
-    } catch (e) {
-      log("Error saving user to Firestore: $e");
+    String? token = await FirebaseMessaging.instance.getToken();
+
+    if (!doc.exists) {
+      // If the user document does not exist, create it
+      await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
+        'name': user.displayName ?? 'No Name',
+        'email': user.email,
+        'role': 'user',
+        'registrationDate': FieldValue.serverTimestamp(),
+        'fcmToken': token,
+      });
+      log("User saved to Firestore!");
+    } else {
+      // Update the FCM token
+      await FirebaseFirestore.instance.collection('users').doc(user.uid).update({
+        'fcmToken': token,
+      });
+      log("User already exists in Firestore. FCM token updated.");
     }
+  } catch (e) {
+    log("Error saving user to Firestore: $e");
   }
+}
 
   bool _validateForm() {
     return emailController.text.isNotEmpty &&

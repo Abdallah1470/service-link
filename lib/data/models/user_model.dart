@@ -1,5 +1,7 @@
 class User {
   final String id;
+  // fcmToken
+  final String? fcmToken;
   final String name;
   final String email;
   final String phoneNumber;
@@ -9,6 +11,7 @@ class User {
   const User({
     required this.id,
     required this.name,
+    this.fcmToken,
     required this.email,
     required this.phoneNumber,
     required this.role,
