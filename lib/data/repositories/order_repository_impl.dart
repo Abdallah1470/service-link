@@ -9,16 +9,16 @@ class OrderRepositoryImpl implements OrderRepository {
   OrderRepositoryImpl(this._firestore);
 
   @override
-  Future<void> addOrder(String userId, order_model.Order order) async {
+  Future<void> addOrder(String userId, order_model.OrderModel order) async {
     await _firestore
         .collection('users')
         .doc(userId)
         .collection('orders')
-        .add(order.toMap());
+        .add(order.toJson());
   }
 
   @override
-  Future<List<order_model.Order>> getOrders(String userId) async {
+  Future<List<order_model.OrderModel>> getOrders(String userId) async {
     QuerySnapshot snapshot = await _firestore
         .collection('users')
         .doc(userId)
@@ -27,19 +27,19 @@ class OrderRepositoryImpl implements OrderRepository {
         .get();
 
     return snapshot.docs
-        .map((doc) => order_model.Order.fromFirestore(
-            doc.data() as Map<String, dynamic>, doc.id))
+        .map((doc) => order_model.OrderModel.fromJson(
+            doc.data() as Map<String, dynamic>))
         .toList();
   }
 
   @override
-  Future<void> updateOrder(String userId, order_model.Order order) async {
+  Future<void> updateOrder(String userId, order_model.OrderModel order) async {
     await _firestore
         .collection('users')
         .doc(userId)
         .collection('orders')
         .doc(order.id)
-        .update(order.toMap());
+        .update(order.toJson());
   }
 
   @override

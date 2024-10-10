@@ -37,7 +37,9 @@ class MainDrawer extends ConsumerWidget {
           drawerItem(
               leadingImageAsset: 'assets/images/user.png',
               text: 'My Profile',
-              onTap: () {}),
+              onTap: () {
+                Navigator.of(context).pushNamed(AppRoutes.profile);
+              }),
           drawerItem(
               leadingImageAsset: 'assets/images/contacts.png',
               text: 'Contact US',

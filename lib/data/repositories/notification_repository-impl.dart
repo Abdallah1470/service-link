@@ -9,12 +9,13 @@ class NotificationRepositoryImpl implements NotificationRepository {
   NotificationRepositoryImpl(this._firestore);
 
   @override
-  Future<void> addNotification(String userId, NotificationModel notification) async {
+  Future<void> addNotification(
+      String userId, NotificationModel notification) async {
     await _firestore
         .collection('users')
         .doc(userId)
         .collection('notifications')
-        .add(notification.toMap());
+        .add(notification.toJson());
   }
 
   @override
@@ -27,18 +28,20 @@ class NotificationRepositoryImpl implements NotificationRepository {
         .get();
 
     return snapshot.docs
-        .map((doc) => NotificationModel.fromFirestore(doc.data() as Map<String, dynamic>, doc.id))
+        .map((doc) =>
+            NotificationModel.fromJson(doc.data() as Map<String, dynamic>))
         .toList();
   }
 
   @override
-  Future<void> updateNotification(String userId, NotificationModel notification) async {
+  Future<void> updateNotification(
+      String userId, NotificationModel notification) async {
     await _firestore
         .collection('users')
         .doc(userId)
         .collection('notifications')
         .doc(notification.id)
-        .update(notification.toMap());
+        .update(notification.toJson());
   }
 
   @override

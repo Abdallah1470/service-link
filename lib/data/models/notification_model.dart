@@ -1,5 +1,3 @@
-// lib/data/models/notification_model.dart
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 enum NotificationState {
@@ -9,7 +7,6 @@ enum NotificationState {
   OrderCompleted,
   OrderCancelled,
   OrderAccepted,
-  // Add more states as needed
 }
 
 class NotificationModel {
@@ -18,7 +15,6 @@ class NotificationModel {
   final String description;
   final NotificationState state;
   final Timestamp timestamp;
-  // Add other relevant fields
 
   NotificationModel({
     required this.id,
@@ -28,23 +24,23 @@ class NotificationModel {
     required this.timestamp,
   });
 
-  factory NotificationModel.fromFirestore(Map<String, dynamic> data, String id) {
+  factory NotificationModel.fromJson(Map<String, dynamic> json) {
     return NotificationModel(
-      id: id,
-      title: data['title'] ?? '',
-      description: data['description'] ?? '',
-      state: _notificationStateFromString(data['state']),
-      timestamp: data['timestamp'] ?? Timestamp.now(),
+      id: json['id'],
+      title: json['title'] ?? '',
+      description: json['description'] ?? '',
+      state: _notificationStateFromString(json['state']),
+      timestamp: json['timestamp'] ?? Timestamp.now(),
     );
   }
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'title': title,
       'description': description,
       'state': _notificationStateToString(state),
       'timestamp': timestamp,
-      // Add other fields as needed
     };
   }
 

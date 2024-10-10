@@ -101,10 +101,11 @@ class AuthViewModel extends StateNotifier<AuthState> {
       state = state.copyWith(errorMessage: e.toString());
     }
     state = state.copyWith(isLoading: false);
+
     /////////////////////////////////////////////
     ////////////////Remove This//////////////////
 
-    order_model.Order newOrder = order_model.Order(
+    order_model.OrderModel newOrder = order_model.OrderModel(
       id: '', // Firestore will generate the ID
       title: 'Order Title',
       description: 'Order Description',
@@ -222,20 +223,31 @@ class AuthViewModel extends StateNotifier<AuthState> {
 
     String? token = await FirebaseMessaging.instance.getToken();
 
+    final userData = {
+      'id': user.uid,
+      'name': user.displayName ?? 'No Name',
+      'email': user.email,
+      'phoneNumber': '', // Initialize with empty string or default value
+      'role': 'user',
+      'city': '', // Initialize with empty string or default value
+      'dateOfBirth': DateTime.now().toIso8601String(), // Initialize with current date or default value
+      'profileImageUrl': '', // Initialize with empty string or default value
+      'registrationDate': FieldValue.serverTimestamp(),
+      'fcmToken': token,
+      'notificationsHistory': [], // Initialize with empty list
+      'ordersHistory': [], // Initialize with empty list
+      'promotionsHistory': [], // Initialize with empty list
+    };
+
     if (!doc.exists) {
       // If the user document does not exist, create it
-      await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
-        'name': user.displayName ?? 'No Name',
-        'email': user.email,
-        'role': 'user',
-        'registrationDate': FieldValue.serverTimestamp(),
-        'fcmToken': token,
-      });
+      await FirebaseFirestore.instance.collection('users').doc(user.uid).set(userData);
       log("User saved to Firestore!");
     } else {
-      // Update the FCM token
+      // Update the FCM token and other fields if necessary
       await FirebaseFirestore.instance.collection('users').doc(user.uid).update({
         'fcmToken': token,
+        // Add other fields to update if necessary
       });
       log("User already exists in Firestore. FCM token updated.");
     }

@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-enum PromotionStatus { active, expired }
+import '../../data/models/promotion_model.dart';
 
+// Assuming PromotionModel and PromotionStatus are defined elsewhere
 class PromotionsItem extends StatelessWidget {
-  final PromotionStatus status;
-  final String title;
-  final String description;
-  final String period;
-  final String promotionCode;
+  final PromotionModel promotion;
 
-  const PromotionsItem(
-      {super.key,
-      required this.status,
-      required this.title,
-      required this.description,
-      required this.period,
-      required this.promotionCode});
+  const PromotionsItem({
+    super.key,
+    required this.promotion,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +23,7 @@ class PromotionsItem extends StatelessWidget {
           Row(
             children: [
               Text(
-                title,
+                promotion.title,
                 style: const TextStyle(
                   fontFamily: 'Roboto Flex',
                   fontWeight: FontWeight.w500,
@@ -39,26 +33,22 @@ class PromotionsItem extends StatelessWidget {
               const Spacer(),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 26, vertical: 6),
+                const EdgeInsets.symmetric(horizontal: 26, vertical: 6),
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: status == PromotionStatus.active
-                        ? Colors.green
-                        : Colors.red,
+                    color: _getBorderColor(promotion.status),
                     width: 1.5,
                   ),
                   borderRadius:
-                      BorderRadius.circular(800), // Optional: rounded corners
+                  BorderRadius.circular(800), // Optional: rounded corners
                 ),
                 child: Text(
-                  status == PromotionStatus.active ? 'Active' : 'Expired',
+                  _getStatusText(promotion.status),
                   style: TextStyle(
                     fontFamily: 'Roboto Flex',
                     fontWeight: FontWeight.w700,
                     fontSize: 15,
-                    color: status == PromotionStatus.active
-                        ? Colors.green
-                        : Colors.red,
+                    color: _getTextColor(promotion.status),
                   ),
                 ),
               ),
@@ -68,7 +58,7 @@ class PromotionsItem extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              description,
+              promotion.description,
               style: TextStyle(
                 fontFamily: 'Roboto Flex',
                 fontWeight: FontWeight.w400,
@@ -82,18 +72,17 @@ class PromotionsItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               ElevatedButton(
-                onPressed: status == PromotionStatus.active
-                  ? () {
-                  Clipboard.setData(ClipboardData(text: promotionCode));
+                onPressed: promotion.isActive()
+                    ? () {
+                  Clipboard.setData(ClipboardData(text: promotion.promotionCode));
 
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Code copied to clipboard')),
                   );
-                }: null,
+                }
+                    : null,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: status == PromotionStatus.active
-                      ? Colors.green
-                      : Colors.red.withOpacity(0.2),
+                  backgroundColor: _getButtonColor(promotion.status),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(4),
                   ),
@@ -108,7 +97,7 @@ class PromotionsItem extends StatelessWidget {
                 ),
               ),
               Text(
-                period,
+                promotion.period, // Using the computed period property from the model
                 style: TextStyle(
                   fontFamily: 'Roboto Flex',
                   fontWeight: FontWeight.w400,
@@ -121,5 +110,50 @@ class PromotionsItem extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String _getStatusText(PromotionStatus status) {
+    switch (status) {
+      case PromotionStatus.active:
+        return 'Active';
+      case PromotionStatus.expired:
+        return 'Expired';
+      case PromotionStatus.used:
+        return 'Used';
+      default:
+        return '';
+    }
+  }
+
+  Color _getBorderColor(PromotionStatus status) {
+    switch (status) {
+      case PromotionStatus.active:
+        return Colors.green;
+      case PromotionStatus.expired:
+        return Colors.red;
+      case PromotionStatus.used:
+        return Colors.blueGrey;
+      default:
+        return Colors.grey;
+    }
+  }
+
+  Color _getTextColor(PromotionStatus status) {
+    switch (status) {
+      case PromotionStatus.active:
+        return Colors.green;
+      case PromotionStatus.expired:
+        return Colors.red;
+      case PromotionStatus.used:
+        return Colors.blueGrey;
+      default:
+        return Colors.black;
+    }
+  }
+
+  Color _getButtonColor(PromotionStatus status) {
+    return status == PromotionStatus.active
+        ? Colors.green
+        : Colors.red.withOpacity(0.2);
   }
 }

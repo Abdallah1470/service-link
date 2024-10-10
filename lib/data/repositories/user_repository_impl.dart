@@ -2,6 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:service_link/data/repositories/user_repository.dart';
 
 import '../models/company_model.dart';
+import '../models/notification_model.dart';
+import '../models/order_model.dart';
+import '../models/promotion_model.dart';
 import '../models/user_model.dart';
 import '../models/worker_model.dart';
 
@@ -11,56 +14,122 @@ class UserRepositoryImpl implements UserRepository {
   UserRepositoryImpl(this.firestore);
 
   @override
-  Future<User?> getUser(String userId) async {
+  Future<UserModel?> getUser(String userId) async {
     final doc = await firestore.collection('users').doc(userId).get();
     if (doc.exists) {
       final data = doc.data()!;
       if (data['role'] == 'worker') {
-        return Worker(
-          id: doc.id,
-          name: data['name'],
-          email: data['email'],
-          phoneNumber: data['phoneNumber'],
-          registrationDate: (data['registrationDate'] as Timestamp).toDate(),
+        return WorkerModel(
+          user: UserModel(
+            id: doc.id,
+            name: data['name'],
+            email: data['email'],
+            phoneNumber: data['phoneNumber'],
+            role: UserRole.values.firstWhere((e) => e.toString().split('.').last == data['role']),
+            city: data['city'],
+            dateOfBirth: DateTime.parse(data['dateOfBirth']),
+            profileImageUrl: data['profileImageUrl'],
+            registrationDate: (data['registrationDate'] as Timestamp).toDate(),
+            fcmToken: data['fcmToken'],
+            notificationsHistory: (data['notificationsHistory'] as List)
+                .map((item) => NotificationModel.fromJson(item))
+                .toList(),
+            ordersHistory: (data['ordersHistory'] as List)
+                .map((item) => OrderModel.fromJson(item))
+                .toList(),
+            promotionsHistory: (data['promotionsHistory'] as List)
+                .map((item) => PromotionModel.fromJson(item))
+                .toList(),
+          ),
           category: data['category'],
-          rating: data['rating'],
-          completedJobs: data['completedJobs'],
+          averageRating: data['rating'],
+          numberOfReviews: data['completedJobs'],
         );
       } else if (data['role'] == 'company') {
         // Fetch company employees as well
-        final employeeDocs = await firestore.collection('users').doc(userId).collection('employees').get();
+        final employeeDocs = await firestore
+            .collection('users')
+            .doc(userId)
+            .collection('employees')
+            .get();
         final employees = employeeDocs.docs.map((doc) {
           final workerData = doc.data();
-          return Worker(
-            id: doc.id,
-            name: workerData['name'],
-            email: workerData['email'],
-            phoneNumber: workerData['phoneNumber'],
-            registrationDate: (workerData['registrationDate'] as Timestamp).toDate(),
+          return WorkerModel(
+            user: UserModel(
+              id: doc.id,
+              name: workerData['name'],
+              email: workerData['email'],
+              phoneNumber: workerData['phoneNumber'],
+              role: UserRole.worker,
+              city: workerData['city'],
+              dateOfBirth: DateTime.parse(workerData['dateOfBirth']),
+              profileImageUrl: workerData['profileImageUrl'],
+              registrationDate:
+                  (workerData['registrationDate'] as Timestamp).toDate(),
+              fcmToken: workerData['fcmToken'],
+              notificationsHistory: (workerData['notificationsHistory'] as List)
+                  .map((item) => NotificationModel.fromJson(item))
+                  .toList(),
+              ordersHistory: (workerData['ordersHistory'] as List)
+                  .map((item) => OrderModel.fromJson(item))
+                  .toList(),
+              promotionsHistory: (workerData['promotionsHistory'] as List)
+                  .map((item) => PromotionModel.fromJson(item))
+                  .toList(),
+            ),
             category: workerData['category'],
-            rating: workerData['rating'],
-            completedJobs: workerData['completedJobs'],
+            averageRating: workerData['rating'],
+            numberOfReviews: workerData['completedJobs'],
           );
         }).toList();
 
-        return Company(
-          id: doc.id,
-          name: data['name'],
-          email: data['email'],
-          phoneNumber: data['phoneNumber'],
-          registrationDate: (data['registrationDate'] as Timestamp).toDate(),
+        return CompanyModel(
+          user: UserModel(
+            id: doc.id,
+            name: data['name'],
+            email: data['email'],
+            phoneNumber: data['phoneNumber'],
+            role: UserRole.values.firstWhere((e) => e.toString().split('.').last == data['role']),
+            city: data['city'],
+            dateOfBirth: DateTime.parse(data['dateOfBirth']),
+            profileImageUrl: data['profileImageUrl'],
+            registrationDate: (data['registrationDate'] as Timestamp).toDate(),
+            fcmToken: data['fcmToken'],
+            notificationsHistory: (data['notificationsHistory'] as List)
+                .map((item) => NotificationModel.fromJson(item))
+                .toList(),
+            ordersHistory: (data['ordersHistory'] as List)
+                .map((item) => OrderModel.fromJson(item))
+                .toList(),
+            promotionsHistory: (data['promotionsHistory'] as List)
+                .map((item) => PromotionModel.fromJson(item))
+                .toList(),
+          ),
           businessName: data['businessName'],
           companyRegistrationNumber: data['companyRegistrationNumber'],
           employees: employees,
         );
       } else {
-        return User(
+        return UserModel(
           id: doc.id,
           name: data['name'],
           email: data['email'],
           phoneNumber: data['phoneNumber'],
-          role: data['role'],
+          role: UserRole.values.firstWhere((e) => e.toString().split('.').last == data['role']),
+          city: data['city'],
+          dateOfBirth: DateTime.parse(data['dateOfBirth']),
+          profileImageUrl: data['profileImageUrl'],
           registrationDate: (data['registrationDate'] as Timestamp).toDate(),
+          fcmToken: data['fcmToken'],
+          notificationsHistory: (data['notificationsHistory'] as List)
+              .map((item) => NotificationModel.fromJson(item))
+              .toList(),
+          ordersHistory: (data['ordersHistory'] as List)
+              .map((item) => OrderModel.fromJson(item))
+              .toList(),
+          promotionsHistory: (data['promotionsHistory'] as List)
+              .map((item) => PromotionModel.fromJson(item))
+              .toList(),
         );
       }
     }
@@ -68,11 +137,11 @@ class UserRepositoryImpl implements UserRepository {
   }
 
   @override
-  Future<void> updateUserRole(User user) async {
+  Future<void> updateUserRole(UserModel user) async {
     await firestore.collection('users').doc(user.id).update({
-      'role': user.role,
-      if (user is Worker) 'category': user.category,
-      if (user is Company) 'businessName': user.businessName,
+      'role': user.role.toString().split('.').last,
+      if (user is WorkerModel) 'category': user.category,
+      if (user is CompanyModel) 'businessName': user.businessName,
     });
   }
 }

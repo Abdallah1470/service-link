@@ -7,18 +7,16 @@ enum OrderStatus {
   Accepted,
   Cancelled,
   Completed,
-  // Add more states as needed
 }
 
-class Order {
+class OrderModel {
   final String id;
   final String title;
   final String description;
   final OrderStatus state;
   final Timestamp timestamp;
-  // Add other relevant fields
 
-  Order({
+  OrderModel({
     required this.id,
     required this.title,
     required this.description,
@@ -26,23 +24,23 @@ class Order {
     required this.timestamp,
   });
 
-  factory Order.fromFirestore(Map<String, dynamic> data, String id) {
-    return Order(
-      id: id,
-      title: data['title'] ?? '',
-      description: data['description'] ?? '',
-      state: _orderStateFromString(data['state']),
-      timestamp: data['timestamp'] ?? Timestamp.now(),
+  factory OrderModel.fromJson(Map<String, dynamic> json) {
+    return OrderModel(
+      id: json['id'],
+      title: json['title'] ?? '',
+      description: json['description'] ?? '',
+      state: _orderStateFromString(json['state']),
+      timestamp: json['timestamp'] ?? Timestamp.now(),
     );
   }
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'title': title,
       'description': description,
       'state': _orderStateToString(state),
       'timestamp': timestamp,
-      // Add other fields as needed
     };
   }
 

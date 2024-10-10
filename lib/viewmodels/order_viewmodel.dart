@@ -5,7 +5,7 @@ import '../data/repositories/order_repository.dart';
 import '../data/repositories/providers.dart';
 
 class OrderState {
-  final List<Order> orders;
+  final List<OrderModel> orders;
   final bool isLoading;
   final String? errorMessage;
 
@@ -16,7 +16,7 @@ class OrderState {
   });
 
   OrderState copyWith({
-    List<Order>? orders,
+    List<OrderModel>? orders,
     bool? isLoading,
     String? errorMessage,
   }) {
@@ -37,14 +37,14 @@ class OrderViewModel extends StateNotifier<OrderState> {
   Future<void> fetchOrders() async {
     state = state.copyWith(isLoading: true);
     try {
-      List<Order> orders = await _orderRepository.getOrders(userId);
+      List<OrderModel> orders = await _orderRepository.getOrders(userId);
       state = state.copyWith(orders: orders, isLoading: false);
     } catch (e) {
       state = state.copyWith(errorMessage: e.toString(), isLoading: false);
     }
   }
 
-  Future<void> addOrder(Order order) async {
+  Future<void> addOrder(OrderModel order) async {
     state = state.copyWith(isLoading: true);
     try {
       await _orderRepository.addOrder(userId, order);
@@ -54,7 +54,7 @@ class OrderViewModel extends StateNotifier<OrderState> {
     }
   }
 
-  Future<void> updateOrder(Order order) async {
+  Future<void> updateOrder(OrderModel order) async {
     state = state.copyWith(isLoading: true);
     try {
       await _orderRepository.updateOrder(userId, order);

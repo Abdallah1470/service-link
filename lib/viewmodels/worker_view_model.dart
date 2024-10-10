@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../data/models/worker_model.dart';
 import '../data/repositories/providers.dart';
 
-class WorkerViewModel extends StateNotifier<Worker?> {
+class WorkerViewModel extends StateNotifier<WorkerModel?> {
   final Ref ref;
 
   WorkerViewModel(this.ref) : super(null);
@@ -17,12 +17,12 @@ class WorkerViewModel extends StateNotifier<Worker?> {
     await ref.read(ratingRepositoryProvider).rateWorker(workerId, raterId, rating, review);
     // Update worker's rating locally
     if (state != null) {
-      double newRating = await ref.read(workerRepositoryProvider).getWorker(workerId).then((worker) => worker!.rating);
-      state = state!.copyWithWorker(rating: newRating);
+      double newRating = await ref.read(workerRepositoryProvider).getWorker(workerId).then((worker) => worker!.averageRating);
+      state = state!.copyWithWorker(averageRating: newRating);
     }
   }
 }
 
-final workerViewModelProvider = StateNotifierProvider<WorkerViewModel, Worker?>((ref) {
+final workerViewModelProvider = StateNotifierProvider<WorkerViewModel, WorkerModel?>((ref) {
   return WorkerViewModel(ref);
 });

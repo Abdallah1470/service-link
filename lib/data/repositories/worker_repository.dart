@@ -1,5 +1,5 @@
 import '../models/worker_model.dart';
 
 abstract class WorkerRepository {
-  Future<Worker?> getWorker(String workerId);
+  Future<WorkerModel?> getWorker(String workerId);
 }

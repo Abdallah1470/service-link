@@ -5,7 +5,7 @@ import 'categories_repository.dart';
 class CategoriesRepositoryImpl implements CategoriesRepository {
 
   @override
-  List<Category> getCategories()  {
+  List<CategoryModel> getCategories()  {
     return categoriesList;
   }
 }

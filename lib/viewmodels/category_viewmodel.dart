@@ -3,7 +3,7 @@ import '../data/models/category_model.dart';
 import '../data/repositories/categories_repository.dart';
 import '../data/repositories/providers.dart';
 
-class CategoryViewModel extends StateNotifier<List<Category>> {
+class CategoryViewModel extends StateNotifier<List<CategoryModel>> {
   final CategoriesRepository repository;
 
   CategoryViewModel(this.repository) : super([]);
@@ -13,7 +13,7 @@ class CategoryViewModel extends StateNotifier<List<Category>> {
   }
 }
 
-final categoriesProvider = StateNotifierProvider<CategoryViewModel, List<Category>>((ref) {
+final categoriesProvider = StateNotifierProvider<CategoryViewModel, List<CategoryModel>>((ref) {
   final categoriesRepository = ref.watch(categoriesRepositoryProvider);
   return CategoryViewModel(categoriesRepository);
 });

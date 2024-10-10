@@ -4,7 +4,7 @@ import '../data/models/company_model.dart';
 import '../data/models/worker_model.dart';
 import '../data/repositories/providers.dart';
 
-class CompanyViewModel extends StateNotifier<Company?> {
+class CompanyViewModel extends StateNotifier<CompanyModel?> {
   final Ref ref;
 
   CompanyViewModel(this.ref) : super(null);
@@ -14,7 +14,7 @@ class CompanyViewModel extends StateNotifier<Company?> {
     state = companyData;
   }
 
-  Future<void> addWorkerToCompany(Worker worker) async {
+  Future<void> addWorkerToCompany(WorkerModel worker) async {
     if (state != null) {
       await ref.read(companyRepositoryProvider).addWorker(state!.id, worker);
       state = state!.copyWithCompany(employees: [...state!.employees, worker]);
@@ -22,6 +22,6 @@ class CompanyViewModel extends StateNotifier<Company?> {
   }
 }
 
-final companyViewModelProvider = StateNotifierProvider<CompanyViewModel, Company?>((ref) {
+final companyViewModelProvider = StateNotifierProvider<CompanyViewModel, CompanyModel?>((ref) {
   return CompanyViewModel(ref);
 });
