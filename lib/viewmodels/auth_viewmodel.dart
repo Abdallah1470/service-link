@@ -120,7 +120,6 @@ class AuthViewModel extends StateNotifier<AuthState> {
 
 // Create a Notification instance
     NotificationModel newNotification = NotificationModel(
-      id: '', // Firestore will generate the ID
       title: 'Announcement',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
       state: NotificationState.Announcements,
@@ -131,7 +130,6 @@ class AuthViewModel extends StateNotifier<AuthState> {
     await ref.read(notificationViewModelProvider(userId).notifier).addNotification(newNotification);
 
     NotificationModel newNotification2 = NotificationModel(
-      id: '',
       title: 'Order Cancelled',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
       state: NotificationState.OrderCancelled,
@@ -141,7 +139,6 @@ class AuthViewModel extends StateNotifier<AuthState> {
     await ref.read(notificationViewModelProvider(userId).notifier).addNotification(newNotification2);
 
     NotificationModel newNotification3 = NotificationModel(
-      id: '',
       title: 'Order Assigned',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
       state: NotificationState.OrderAssigned,
@@ -151,7 +148,6 @@ class AuthViewModel extends StateNotifier<AuthState> {
     await ref.read(notificationViewModelProvider(userId).notifier).addNotification(newNotification3);
 
     NotificationModel newNotification4 = NotificationModel(
-      id: '',
       title: 'Order Completed',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
       state: NotificationState.OrderCompleted,
@@ -161,7 +157,6 @@ class AuthViewModel extends StateNotifier<AuthState> {
     await ref.read(notificationViewModelProvider(userId).notifier).addNotification(newNotification4);
 
     NotificationModel newNotification5 = NotificationModel(
-      id: '',
       title: 'Confirmed Order',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
       state: NotificationState.ConfirmedOrder,
@@ -171,7 +166,6 @@ class AuthViewModel extends StateNotifier<AuthState> {
     await ref.read(notificationViewModelProvider(userId).notifier).addNotification(newNotification5);
 
     NotificationModel newNotification6 = NotificationModel(
-      id: '',
       title: 'Order Accepted',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
       state: NotificationState.OrderAccepted,

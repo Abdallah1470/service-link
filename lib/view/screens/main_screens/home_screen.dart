@@ -1,4 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:service_link/view/screens/main_screen.dart';
+import 'package:service_link/view/screens/main_screens/CameraPage.dart';
+import 'package:service_link/view/screens/main_screens/DoctorPage.dart';
+import 'package:service_link/view/screens/main_screens/DriverPage.dart';
+import 'package:service_link/view/screens/main_screens/ElectricianPage.dart';
+import 'package:service_link/view/screens/main_screens/TeacherPage.dart';
+import 'package:service_link/view/screens/main_screens/WorkerPage.dart';
+import 'package:service_link/view/screens/main_screens/CleaningPage.dart';
+import 'package:service_link/view/screens/main_screens/EngineerPage.dart';
+
+import 'package:service_link/view/screens/main_screens/Menu.dart';
+import 'package:service_link/view/screens/main_screens/NotificationPage.dart';
+import 'package:service_link/view/screens/main_screens/OrderingPage.dart';
+import 'package:service_link/view/screens/main_screens/Plumbing.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,31 +22,38 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        toolbarHeight: 130,
-        elevation: 0,
-        backgroundColor: Color(0xFF00AEEF),
-        title: Row(
-          children: [
-            Image.asset(
-              'assets/images/img.png',
-              height: 140,
-              color: Colors.white,
-              fit: BoxFit.contain,
-            ),
-          ],
+        toolbarHeight: 100,
+        backgroundColor: Colors.greenAccent[200],
+        elevation: 40,
+
+        title: Text('Service Link',
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 30,
+            )),
+        leading: IconButton(
+          icon: Icon(
+            Icons.menu_outlined,
+            size: 30,
+            color: Colors.black,
+          ), // Matched size
+          onPressed: () {
+            Scaffold.of(context).openDrawer();
+          },
         ),
         actions: [
           IconButton(
             icon: Icon(
-              Icons.menu,
+              Icons.notifications_active_outlined,
               size: 30,
               color: Colors.black,
             ), // Matched size
-            onPressed: () {/*
+            onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Menu()),
-              );*/
+                MaterialPageRoute(builder: (context) => NotificationPage()),
+              );
             },
           ),
         ],
@@ -95,47 +116,47 @@ class HomeScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   List<Map<String, dynamic>> services = [
                     {
-                      'icon': Icons.cleaning_services,
+                      'icon': Icons.cleaning_services_outlined,
                       'label': 'Cleaning',
                       'page': CleaningPage()
                     },
                     {
-                      'icon': Icons.build,
-                      'label': 'Repairing',
-                      'page': RepairingPage()
+                      'icon': Icons.medical_services_outlined,
+                      'label': 'Doctor',
+                      'page': DoctorPage()
                     },
                     {
-                      'icon': Icons.electrical_services,
+                      'icon': Icons.drive_eta_outlined,
+                      'label': 'Driver',
+                      'page': DriverPage()
+                    },
+                    {
+                      'icon': Icons.handyman_outlined,
+                      'label': 'Worker',
+                      'page': WorkerPage()
+                    },
+                    {
+                      'icon': Icons.camera_alt_outlined,
+                      'label': 'Photographer',
+                      'page': CameraPage()
+                    },
+                    {
+                      'icon': Icons.electrical_services_outlined,
                       'label': 'Electrician',
                       'page': ElectricianPage()
                     },
                     {
-                      'icon': Icons.handyman,
-                      'label': 'Carpenter',
-                      'page': CarpenterPage()
+                      'icon': Icons.engineering_outlined,
+                      'label': 'Engineer',
+                      'page': EngineerPage()
                     },
                     {
-                      'icon': Icons.build,
-                      'label': 'Repairing',
-                      'page': RepairingPage()
+                      'icon': Icons.school_outlined,
+                      'label': 'Teacher',
+                      'page': TeacherPage()
                     },
                     {
-                      'icon': Icons.electrical_services,
-                      'label': 'Electrician',
-                      'page': ElectricianPage()
-                    },
-                    {
-                      'icon': Icons.handyman,
-                      'label': 'Carpenter',
-                      'page': CarpenterPage()
-                    },
-                    {
-                      'icon': Icons.build,
-                      'label': 'Repairing',
-                      'page': RepairingPage()
-                    },
-                    {
-                      'icon': Icons.more_horiz,
+                      'icon': Icons.more_horiz_outlined,
                       'label': 'More',
                       'page': MorePage()
                     },
@@ -202,54 +223,19 @@ class ServiceCard extends StatelessWidget {
     );
   }
 }
-
-// Example pages for navigation
-class CleaningPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Cleaning Service')),
-      body: Center(child: Text('Welcome to the Cleaning Service Page!')),
-    );
-  }
-}
-
-class RepairingPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Repairing Service')),
-      body: Center(child: Text('Welcome to the Repairing Service Page!')),
-    );
-  }
-}
-
-class ElectricianPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Electrician Service')),
-      body: Center(child: Text('Welcome to the Electrician Service Page!')),
-    );
-  }
-}
-
-class CarpenterPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Carpenter Service')),
-      body: Center(child: Text('Welcome to the Carpenter Service Page!')),
-    );
-  }
-}
-
 class MorePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('More Services')),
-      body: Center(child: Text('Welcome to the More Services Page!')),
+      appBar: AppBar(
+        title: Text('More Services'),
+      ),
+      body: Center(
+        child: Text(
+          'Later ...',
+          style: TextStyle(fontSize: 22), // Correct placement of style
+        ),
+      ),
     );
   }
 }

@@ -58,9 +58,11 @@ class LoginScreen extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/images/img.png',
-                width: 140,
+                'assets/images/logo_2_rem_bg.png',
+                height: 130,
+                width: 250,
                 color: Colors.white,
+                fit: BoxFit.fitWidth,
               ),
               SizedBox(
                 width: 550,

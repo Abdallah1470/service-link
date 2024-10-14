@@ -12,7 +12,7 @@ class Assets {
   static const String assetsAnimationsWelcomeAnimation = 'assets/animations/welcome_animation.json';
   static const String assetsIconsFacebook = 'assets/icons/facebook.svg';
   static const String assetsIconsGoogle = 'assets/icons/google.svg';
-  static const String assetsImagesAppIcon = 'assets/images/app_icon.jpg';
+  static const String assetsImagesAppIcon = 'assets/images/logo_2_rem_bg.png';
   static const String assetsImagesChain = 'assets/images/chain.png';
   static const String assetsImagesImage = 'assets/images/image.png';
   static const String assetsImagesImg = 'assets/images/img.png';
@@ -43,10 +43,16 @@ class Assets {
   static const String imagesArrowNextSmall = 'assets/images/arrow_next_small.png';
   static const String imagesBricks = 'assets/images/bricks.png';
   static const String imagesChain = 'assets/images/chain.png';
+  static const String imagesCoaching = 'assets/images/Coaching.png';
   static const String imagesConstructionWorker = 'assets/images/construction_worker.png';
   static const String imagesContacts = 'assets/images/contacts.png';
+  static const String imagesDoctor1 = 'assets/images/doctor1.jpg';
+  static const String imagesDoctor2 = 'assets/images/doctor2.jpg';
+  static const String imagesDoctor3 = 'assets/images/doctor3.png';
+  static const String imagesDoctor4 = 'assets/images/doctor4.jpg';
   static const String imagesImage = 'assets/images/image.png';
   static const String imagesImg = 'assets/images/img.png';
+  static const String imagesLogo2 = 'assets/images/logo_2.png';
   static const String imagesLogout = 'assets/images/logout.png';
   static const String imagesNotificationAnnouncments = 'assets/images/notification_announcments.png';
   static const String imagesNotificationConfrmOrder = 'assets/images/notification_confrm_order.png';

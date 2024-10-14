@@ -37,9 +37,11 @@ class SignupScreen extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/images/img.png',
-              width: 120,
+              'assets/images/logo_2_rem_bg.png',
+              height: 130,
+              width: 250,
               color: Theme.of(context).colorScheme.primary,
+              fit: BoxFit.fitWidth,
             ),
             const SizedBox(height: 20),
             TextFormField(

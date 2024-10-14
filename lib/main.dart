@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'app/routes/app_routes.dart';
 import 'core/constants/theme.dart';
 import 'firebase/firebase_options.dart';
@@ -14,8 +15,22 @@ final sharedPreferencesProvider = FutureProvider<SharedPreferences>((ref) async 
   return await SharedPreferences.getInstance();
 });
 
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+FlutterLocalNotificationsPlugin();
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+
+  const AndroidInitializationSettings initializationSettingsAndroid =
+  AndroidInitializationSettings('@mipmap/ic_launcher');
+
+  const InitializationSettings initializationSettings =
+  InitializationSettings(android: initializationSettingsAndroid);
+
+  await flutterLocalNotificationsPlugin.initialize(initializationSettings);
+
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

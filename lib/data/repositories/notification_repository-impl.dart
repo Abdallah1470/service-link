@@ -36,12 +36,12 @@ class NotificationRepositoryImpl implements NotificationRepository {
   @override
   Future<void> updateNotification(
       String userId, NotificationModel notification) async {
-    await _firestore
+ /*   await _firestore
         .collection('users')
         .doc(userId)
         .collection('notifications')
         .doc(notification.id)
-        .update(notification.toJson());
+        .update(notification.toJson());*/
   }
 
   @override

@@ -20,18 +20,18 @@ class MainDrawer extends ConsumerWidget {
       width: MediaQuery.of(context).size.width * 0.75,
       child: ListView(
         children: [
-          const DrawerHeader(
+          DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: Colors.greenAccent[200],
             ),
             child: Center(
-              child: Text(
-                'Drawer Header',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
+              child: Image.asset(
+                  'assets/images/logo_2_rem_bg.png',
+                  width:200,
+                  height: 200,
+                  fit: BoxFit.cover,
+                color: Colors.white,
+              )
             ),
           ),
           drawerItem(

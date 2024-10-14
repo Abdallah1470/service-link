@@ -6,27 +6,37 @@ enum NotificationState {
   OrderAssigned,
   OrderCompleted,
   OrderCancelled,
-  OrderAccepted,
+  OrderAccepted, OrderReceived,
 }
 
 class NotificationModel {
-  final String id;
   final String title;
   final String description;
-  final NotificationState state;
   final Timestamp timestamp;
+  final NotificationState state;
 
   NotificationModel({
-    required this.id,
     required this.title,
     required this.description,
-    required this.state,
     required this.timestamp,
+    required this.state,
   });
+
+ factory NotificationModel.fromFirestore(DocumentSnapshot doc) {
+    Map data = doc.data() as Map;
+    return NotificationModel(
+      title: data['title'] ?? '',
+      description: data['description'] ?? '',
+      timestamp: data['timestamp'] ?? Timestamp.now(),
+      state: NotificationState.values.firstWhere(
+        (e) => e.toString() == 'NotificationState.${data['state']}',
+        orElse: () => NotificationState.Announcements,
+      ),
+    );
+  }
 
   factory NotificationModel.fromJson(Map<String, dynamic> json) {
     return NotificationModel(
-      id: json['id'],
       title: json['title'] ?? '',
       description: json['description'] ?? '',
       state: _notificationStateFromString(json['state']),
@@ -36,7 +46,6 @@ class NotificationModel {
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
       'title': title,
       'description': description,
       'state': _notificationStateToString(state),
