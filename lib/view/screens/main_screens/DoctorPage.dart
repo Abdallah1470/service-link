@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:service_link/view/screens/main_screen.dart';
 import 'package:service_link/view/screens/main_screens/OrderingPage.dart';
+import 'package:service_link/view/screens/main_screens/mainprofilescreen.dart';
 
 class DoctorPage extends StatelessWidget {
   @override
@@ -104,7 +105,7 @@ class DoctorPage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: [
                     DoctorCard(
-                      imagePath: 'assets/images/Doctors/doctor1.jpg',
+                      imagePath: 'assets/images/doctor1.jpg',
                       name: 'Dr. Mark Alonso',
                       specialty: 'Neonatology',
                       experience: '10 years',
@@ -117,7 +118,7 @@ class DoctorPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                              imagePath: 'assets/images/Doctors/doctor1.jpg',
+                              imagePath: 'assets/images/doctor1.jpg',
                               name: 'Dr. Mark Alonso',
                               specialty: 'Neonatology',
                               experience: '10 years',
@@ -131,7 +132,7 @@ class DoctorPage extends StatelessWidget {
                       },
                     ),
                     DoctorCard(
-                      imagePath: 'assets/images/Doctors/doctor2.jpg',
+                      imagePath: 'assets/images/doctor2.jpg',
                       name: 'Dr. Ahmed Gamal',
                       specialty: 'Surgery',
                       experience: '15 years',
@@ -144,7 +145,7 @@ class DoctorPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                              imagePath: 'assets/images/Doctors/doctor2.jpg',
+                              imagePath: 'assets/images/doctor2.jpg',
                               name: 'Dr. Ahmed Gamal',
                               specialty: 'Surgery',
                               experience: '15 years',
@@ -158,7 +159,7 @@ class DoctorPage extends StatelessWidget {
                       },
                     ),
                     DoctorCard(
-                      imagePath: 'assets/images/Doctors/doctor3.png',
+                      imagePath: 'assets/images/doctor3.png',
                       name: 'Dr. Sarah Lee',
                       specialty: 'Dermatology',
                       experience: '8 years',
@@ -171,7 +172,7 @@ class DoctorPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                              imagePath: 'assets/images/Doctors/doctor3.png',
+                              imagePath: 'assets/images/doctor3.png',
                               name: 'Dr. Sarah Lee',
                               specialty: 'Dermatology',
                               experience: '8 years',
@@ -185,7 +186,7 @@ class DoctorPage extends StatelessWidget {
                       },
                     ),
                     DoctorCard(
-                      imagePath: 'assets/images/Doctors/doctor4.jpg',
+                      imagePath: 'assets/images/doctor4.jpg',
                       name: 'Dr. Michael Robert',
                       specialty: 'Anesthesiology',
                       experience: '12 years',
@@ -198,7 +199,7 @@ class DoctorPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                              imagePath: 'assets/images/Doctors/doctor4.jpg',
+                              imagePath: 'assets/images/doctor4.jpg',
                               name: 'Dr. Michael Robert',
                               specialty: 'Anesthesiology',
                               experience: '12 years',
@@ -241,28 +242,27 @@ class DoctorPage extends StatelessWidget {
                     children: [
                       Expanded(
                         child: DoctorCard(
-                          imagePath: 'assets/images/Doctors/doctor2.jpg',
-                          name: 'Dr. Emily Adams',
-                          specialty: 'Cardiology',
-                          experience: '20 years',
-                          qualification: 'MD, Cardiology',
-                          rating: 4.9,
-                          workRegion: 'New York, NY',
-                          priceStart: 150.0,
+                          imagePath: 'assets/images/doctor2.jpg',
+                      name: 'Dr. Ahmed Gamal',
+                      specialty: 'Surgery',
+                      experience: '15 years',
+                      qualification: 'MBBS, MS Surgery',
+                      rating: 4.7,
+                      workRegion: 'Cairo, Egypt',
+                      priceStart: 200.0,
                           onTap: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => DoctorProfile(
-                                  imagePath:
-                                      'assets/images/Doctors/doctor2.jpg',
-                                  name: 'Dr. Emily Adams',
-                                  specialty: 'Cardiology',
-                                  experience: '20 years',
-                                  qualification: 'MD, Cardiology',
-                                  rating: 4.9,
-                                  workRegion: 'New York, NY',
-                                  priceStart: 150.0,
+                                   imagePath: 'assets/images/doctor2.jpg',
+                      name: 'Dr. Ahmed Gamal',
+                      specialty: 'Surgery',
+                      experience: '15 years',
+                      qualification: 'MBBS, MS Surgery',
+                      rating: 4.7,
+                      workRegion: 'Cairo, Egypt',
+                      priceStart: 200.0,
                                 ),
                               ),
                             );
@@ -272,7 +272,7 @@ class DoctorPage extends StatelessWidget {
                       SizedBox(width: 20), // Space between the two doctor cards
                       Expanded(
                         child: DoctorCard(
-                          imagePath: 'assets/images/Doctors/doctor1.jpg',
+                          imagePath: 'assets/images/doctor1.jpg',
                           name: 'Dr. Liam Johnson',
                           specialty: 'Neurology',
                           experience: '17 years',
@@ -286,7 +286,7 @@ class DoctorPage extends StatelessWidget {
                               MaterialPageRoute(
                                 builder: (context) => DoctorProfile(
                                   imagePath:
-                                      'assets/images/Doctors/doctor1.jpg',
+                                      'assets/images/doctor1.jpg',
                                   name: 'Dr. Liam Johnson',
                                   specialty: 'Neurology',
                                   experience: '17 years',
@@ -308,28 +308,27 @@ class DoctorPage extends StatelessWidget {
                     children: [
                       Expanded(
                         child: DoctorCard(
-                          imagePath: 'assets/images/Doctors/doctor4.jpg',
-                          name: 'Dr. Clara Wong',
-                          specialty: 'Oncology',
-                          experience: '9 years',
-                          qualification: 'MD, Oncology',
-                          rating: 4.8,
-                          workRegion: 'Chicago, IL',
-                          priceStart: 200.0,
+                          imagePath: 'assets/images/doctor1.jpg',
+                      name: 'Dr. Mark Alonso',
+                      specialty: 'Neonatology',
+                      experience: '10 years',
+                      qualification: 'MD, Pediatrics',
+                      rating: 4.8,
+                      workRegion: 'New York, NY',
+                      priceStart: 150.0,
                           onTap: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => DoctorProfile(
-                                  imagePath:
-                                      'assets/images/Doctors/doctor4.jpg',
-                                  name: 'Dr. Clara Wong',
-                                  specialty: 'Oncology',
-                                  experience: '9 years',
-                                  qualification: 'MD, Oncology',
-                                  rating: 4.8,
-                                  workRegion: 'Chicago, IL',
-                                  priceStart: 200.0,
+                                imagePath: 'assets/images/doctor1.jpg',
+                      name: 'Dr. Mark Alonso',
+                      specialty: 'Neonatology',
+                      experience: '10 years',
+                      qualification: 'MD, Pediatrics',
+                      rating: 4.8,
+                      workRegion: 'New York, NY',
+                      priceStart: 150.0,
                                 ),
                               ),
                             );
@@ -339,28 +338,27 @@ class DoctorPage extends StatelessWidget {
                       SizedBox(width: 20), // Space between the two doctor cards
                       Expanded(
                         child: DoctorCard(
-                          imagePath: 'assets/images/Doctors/doctor4.jpg',
-                          name: 'Dr. Clara Wong',
-                          specialty: 'Oncology',
-                          experience: '9 years',
-                          qualification: 'MD, Oncology',
-                          rating: 4.8,
-                          workRegion: 'Chicago, IL',
-                          priceStart: 200.0,
+                          imagePath: 'assets/images/doctor3.png',
+                      name: 'Dr. Sarah Lee',
+                      specialty: 'Dermatology',
+                      experience: '8 years',
+                      qualification: 'MD, Dermatology',
+                      rating: 4.9,
+                      workRegion: 'San Francisco, CA',
+                      priceStart: 180.0,
                           onTap: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => DoctorProfile(
-                                  imagePath:
-                                      'assets/images/Doctors/doctor4.jpg',
-                                  name: 'Dr. Clara Wong',
-                                  specialty: 'Oncology',
-                                  experience: '9 years',
-                                  qualification: 'MD, Oncology',
-                                  rating: 4.8,
-                                  workRegion: 'Chicago, IL',
-                                  priceStart: 200.0,
+                                imagePath: 'assets/images/doctor3.png',
+                      name: 'Dr. Sarah Lee',
+                      specialty: 'Dermatology',
+                      experience: '8 years',
+                      qualification: 'MD, Dermatology',
+                      rating: 4.9,
+                      workRegion: 'San Francisco, CA',
+                      priceStart: 180.0,
                                 ),
                               ),
                             );
@@ -375,7 +373,7 @@ class DoctorPage extends StatelessWidget {
                     children: [
                       Expanded(
                         child: DoctorCard(
-                          imagePath: 'assets/images/Doctors/doctor4.jpg',
+                          imagePath: 'assets/images/doctor4.jpg',
                           name: 'Dr. Clara Wong',
                           specialty: 'Oncology',
                           experience: '9 years',
@@ -389,7 +387,7 @@ class DoctorPage extends StatelessWidget {
                               MaterialPageRoute(
                                 builder: (context) => DoctorProfile(
                                   imagePath:
-                                      'assets/images/Doctors/doctor4.jpg',
+                                      'assets/images/doctor4.jpg',
                                   name: 'Dr. Clara Wong',
                                   specialty: 'Oncology',
                                   experience: '9 years',
@@ -612,8 +610,30 @@ class DoctorProfile extends StatelessWidget {
               "Bio or additional details about the user would go here.",
               style: TextStyle(fontSize: 16),
             ),
-            Spacer(),
-            Expanded(
+ Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Column(
+                children: [
+                     Divider(),
+                  ReviewItem(
+                    name: 'Sofian Moaz',
+                    profilePic: 'assets/images/profile.jpg', // Replace with your image path
+                    reviewDate: '4 May 2024',
+                    reviewText: 'غالى شوية بس شغله نضيف اوى وسريع ',
+                    rating: 4,
+                  ),
+                  Divider(),
+                  ReviewItem(
+                    name: 'Kerollos Gamil',
+                    profilePic: 'assets/images/profile.jpg', // Replace with your image path
+                    reviewDate: '3 February 2024',
+                    reviewText: 'الراجل شغله 10 من 10',
+                    rating: 5,
+                  ),
+                  Divider(),
+                ],
+              ),
+            ),            Expanded(
               child: Align(
                 alignment: Alignment.bottomCenter,
                 // Align the button at the bottom
