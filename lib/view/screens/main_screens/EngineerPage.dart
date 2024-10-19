@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:service_link/view/screens/main_screen.dart';
 import 'package:service_link/view/screens/main_screens/OrderingPage.dart';
+import 'package:service_link/view/screens/main_screens/mainprofilescreen.dart';
 
 class EngineerPage extends StatelessWidget {
   const EngineerPage({super.key});
@@ -106,7 +107,7 @@ class EngineerPage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: [
                     DoctorCard(
-                      imagePath: 'assets/images/Eng/eng2.jpg',
+                      imagePath: 'assets/images/eng2.jpg',
                       name: 'Eng. Ropert Marcos',
                       specialty: 'Decor',
                       experience: '10 years',
@@ -119,7 +120,7 @@ class EngineerPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                              imagePath: 'assets/images/Eng/eng2.jpg',
+                              imagePath: 'assets/images/eng2.jpg',
                               name: 'Eng. Ropert Marcos',
                               specialty: 'Decor',
                               experience: '10 years',
@@ -133,7 +134,7 @@ class EngineerPage extends StatelessWidget {
                       },
                     ),
                     DoctorCard(
-                      imagePath: 'assets/images/Eng/eng3.jpg',
+                      imagePath: 'assets/images/eng3.jpg',
                       name: 'Dr. Mark Alonso',
                       specialty: 'Civil Engineer',
                       experience: '10 years',
@@ -160,7 +161,7 @@ class EngineerPage extends StatelessWidget {
                       },
                     ),
                     DoctorCard(
-                      imagePath: 'assets/images/Eng/eng5.jpg',
+                      imagePath: 'assets/images/eng5.jpg',
                       name: 'Eng. Martin Clark',
                       specialty: 'Civil Engineer',
                       experience: '8 years',
@@ -173,7 +174,7 @@ class EngineerPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                              imagePath: 'assets/images/Eng/eng5.jpg',
+                              imagePath: 'assets/images/eng5.jpg',
                               name: 'Eng. Martin Clark',
                               specialty: 'Civil Engineer',
                               experience: '8 years',
@@ -187,7 +188,7 @@ class EngineerPage extends StatelessWidget {
                       },
                     ),
                     DoctorCard(
-                      imagePath: 'assets/images/Eng/eng6.jpg',
+                      imagePath: 'assets/images/eng6.jpg',
                       name: 'ُEng. Michael Robert',
                       specialty: 'structural engineer',
                       experience: '12 years',
@@ -200,7 +201,7 @@ class EngineerPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                              imagePath: 'assets/images/Eng/eng6.jpg',
+                              imagePath: 'assets/images/eng6.jpg',
                               name: 'ُEng. Michael Robert',
                               specialty: 'structural engineer',
                               experience: '12 years',
@@ -247,7 +248,7 @@ class EngineerPage extends StatelessWidget {
                     children: [
                       Expanded(
                         child: DoctorCard(
-                          imagePath: 'assets/images/Eng/eng1.jpg',
+                          imagePath: 'assets/images/eng1.jpg',
                           name: 'Eng. Mike Adams',
                           specialty: 'structural engineer',
                           experience: '20 years',
@@ -260,7 +261,7 @@ class EngineerPage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => DoctorProfile(
-                                  imagePath: 'assets/images/Eng/eng1.jpg',
+                                  imagePath: 'assets/images/eng1.jpg',
                                   name: 'Eng. Mike Adams',
                                   specialty: 'structural engineer',
                                   experience: '20 years',
@@ -278,7 +279,7 @@ class EngineerPage extends StatelessWidget {
                       // Space between the two doctor cards
                       Expanded(
                         child: DoctorCard(
-                          imagePath: 'assets/images/Eng/eng4.jpg',
+                          imagePath: 'assets/images/eng4.jpg',
                           name: 'Eng. Andreas Johnson',
                           specialty: 'Civil Engineer',
                           experience: '17 years',
@@ -291,7 +292,7 @@ class EngineerPage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => DoctorProfile(
-                                  imagePath: 'assets/images/Eng/eng4.jpg',
+                                  imagePath: 'assets/images/eng4.jpg',
                                   name: 'Eng. Andreas Johnson',
                                   specialty: 'Civil Engineer',
                                   experience: '17 years',
@@ -313,7 +314,7 @@ class EngineerPage extends StatelessWidget {
                     children: [
                       Expanded(
                         child: DoctorCard(
-                          imagePath: 'assets/images/Eng/eng3.jpg',
+                          imagePath: 'assets/images/eng3.jpg',
                           name: 'Dr. Mark Alonso',
                           specialty: 'Civil Engineer',
                           experience: '10 years',
@@ -326,7 +327,7 @@ class EngineerPage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => DoctorProfile(
-                                  imagePath: 'assets/images/Eng/eng3.jpg',
+                                  imagePath: 'assets/images/eng3.jpg',
                                   name: 'Dr. Mark Alonso',
                                   specialty: 'Civil Engineer',
                                   experience: '10 years',
@@ -344,7 +345,7 @@ class EngineerPage extends StatelessWidget {
                       // Space between the two doctor cards
                       Expanded(
                         child: DoctorCard(
-                          imagePath: 'assets/images/Eng/eng5.jpg',
+                          imagePath: 'assets/images/eng5.jpg',
                           name: 'Eng. Martin Clark',
                           specialty: 'Civil Engineer',
                           experience: '8 years',
@@ -357,7 +358,7 @@ class EngineerPage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => DoctorProfile(
-                                  imagePath: 'assets/images/Eng/eng5.jpg',
+                                  imagePath: 'assets/images/eng5.jpg',
                                   name: 'Eng. Martin Clark',
                                   specialty: 'Civil Engineer',
                                   experience: '8 years',
@@ -379,7 +380,7 @@ class EngineerPage extends StatelessWidget {
                     children: [
                       Expanded(
                         child: DoctorCard(
-                          imagePath: 'assets/images/Eng/eng2.jpg',
+                          imagePath: 'assets/images/eng2.jpg',
                           name: 'Eng. Ropert Marcos',
                           specialty: 'Decor',
                           experience: '10 years',
@@ -392,7 +393,7 @@ class EngineerPage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => DoctorProfile(
-                                  imagePath: 'assets/images/Eng/eng2.jpg',
+                                  imagePath: 'assets/images/eng2.jpg',
                                   name: 'Eng. Ropert Marcos',
                                   specialty: 'Decor',
                                   experience: '10 years',
@@ -630,8 +631,30 @@ class DoctorProfile extends StatelessWidget {
               "Bio or additional details about the doctor would go here. You can include doctor's experience, qualifications, etc.",
               style: TextStyle(fontSize: 16),
             ),
-            const Spacer(), // Push the button to the bottom of the screen
-            Expanded(
+ Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Column(
+                children: [
+                     Divider(),
+                  ReviewItem(
+                    name: 'Sofian Moaz',
+                    profilePic: 'assets/images/profile.jpg', // Replace with your image path
+                    reviewDate: '4 May 2024',
+                    reviewText: 'غالى شوية بس شغله نضيف اوى وسريع ',
+                    rating: 4,
+                  ),
+                  Divider(),
+                  ReviewItem(
+                    name: 'Kerollos Gamil',
+                    profilePic: 'assets/images/profile.jpg', // Replace with your image path
+                    reviewDate: '3 February 2024',
+                    reviewText: 'الراجل شغله 10 من 10',
+                    rating: 5,
+                  ),
+                  Divider(),
+                ],
+              ),
+            ),            Expanded(
               child: Align(
                 alignment: Alignment.bottomCenter,
                 // Align the button at the bottom

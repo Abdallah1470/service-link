@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:service_link/view/screens/main_screen.dart';
 import 'package:service_link/view/screens/main_screens/OrderingPage.dart';
+import 'package:service_link/view/screens/main_screens/mainprofilescreen.dart';
 
 
 class WorkerPage extends StatelessWidget {
@@ -105,7 +106,7 @@ class WorkerPage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                    children: [
                      DoctorCard(
-                       imagePath: 'assets/images/Worker/worker1.jpg',
+                       imagePath: 'assets/images/worker1.jpg',
                        name: 'Mr. Mark Alonso',
                        specialty: 'Carpenter',
                        experience: '10 years',
@@ -118,7 +119,7 @@ class WorkerPage extends StatelessWidget {
                            context,
                            MaterialPageRoute(
                              builder: (context) => DoctorProfile(
-                              imagePath: 'assets/images/Worker/worker1.jpg',
+                              imagePath: 'assets/images/worker1.jpg',
                        name: 'Mr. Mark Alonso',
                        specialty: 'Carpenter',
                        experience: '10 years',
@@ -132,7 +133,7 @@ class WorkerPage extends StatelessWidget {
                        },
                      ),
                      DoctorCard(
-                       imagePath: 'assets/images/Worker/worker6.jpg',
+                       imagePath: 'assets/images/worker6.jpg',
                        name: 'Mr. Ahmed Gamal',
                        specialty: 'Wood Works',
                        experience: '15 years',
@@ -145,7 +146,7 @@ class WorkerPage extends StatelessWidget {
                            context,
                            MaterialPageRoute(
                              builder: (context) => DoctorProfile(
-                               imagePath: 'assets/images/Worker/worker6.jpg',
+                               imagePath: 'assets/images/worker6.jpg',
                        name: 'Mr. Ahmed Gamal',
                        specialty: 'Wood Works',
                        experience: '15 years',
@@ -159,7 +160,7 @@ class WorkerPage extends StatelessWidget {
                        },
                      ),
                      DoctorCard(
-                       imagePath: 'assets/images/Worker/worker8.jpg',
+                       imagePath: 'assets/images/worker8.jpg',
                        name: 'Mr. Edward Weston',
                        specialty: 'Garden Works',
                        experience: '8 years',
@@ -172,7 +173,7 @@ class WorkerPage extends StatelessWidget {
                            context,
                            MaterialPageRoute(
                              builder: (context) => DoctorProfile(
-                              imagePath: 'assets/images/Worker/worker8.jpg',
+                              imagePath: 'assets/images/worker8.jpg',
                        name: 'Mr. Edward Weston',
                        specialty: 'Garden Works',
                        experience: '8 years',
@@ -186,7 +187,7 @@ class WorkerPage extends StatelessWidget {
                        },
                      ),
                      DoctorCard(
-                       imagePath: 'assets/images/Worker/worker4.jpg',
+                       imagePath: 'assets/images/worker4.jpg',
                        name: 'Mr. Michael Robert',
                        specialty: 'Insect control worker',
                        experience: '12 years',
@@ -199,7 +200,7 @@ class WorkerPage extends StatelessWidget {
                            context,
                            MaterialPageRoute(
                              builder: (context) => DoctorProfile(
-                              imagePath: 'assets/images/Worker/worker4.jpg',
+                              imagePath: 'assets/images/worker4.jpg',
                        name: 'Mr. Michael Robert',
                        specialty: 'Insect control worker',
                        experience: '12 years',
@@ -246,7 +247,7 @@ Column(
       children: [
         Expanded(
           child: DoctorCard(
-            imagePath: 'assets/images/Worker/worker5.jpg',
+            imagePath: 'assets/images/worker5.jpg',
             name: 'Mr. Tom Walker',
             specialty: 'Plumbing Works',
             experience: '20 years',
@@ -259,7 +260,7 @@ Column(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                     imagePath: 'assets/images/Worker/worker5.jpg',
+                     imagePath: 'assets/images/worker5.jpg',
             name: 'Mr. Tom Walker',
             specialty: 'Plumbing Works',
             experience: '20 years',
@@ -276,7 +277,7 @@ Column(
         SizedBox(width: 20), // Space between the two doctor cards
         Expanded(
           child: DoctorCard(
-            imagePath: 'assets/images/Worker/worker9.jpg',
+            imagePath: 'assets/images/worker9.jpg',
             name: 'Mr. Andy Martin',
             specialty: 'Factory Worker',
             experience: '17 years',
@@ -289,7 +290,7 @@ Column(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                    imagePath: 'assets/images/Worker/worker9.jpg',
+                    imagePath: 'assets/images/worker9.jpg',
             name: 'Mr. Andy Martin',
             specialty: 'Factory Worker',
             experience: '17 years',
@@ -311,7 +312,7 @@ Column(
       children: [
         Expanded(
           child: DoctorCard(
-           imagePath: 'assets/images/Worker/worker6.jpg',
+           imagePath: 'assets/images/worker6.jpg',
       name: 'Mr. Ahmed Gamal',
       specialty: 'Wood Works',
       experience: '15 years',
@@ -324,7 +325,7 @@ Column(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                   imagePath: 'assets/images/Worker/worker6.jpg',
+                   imagePath: 'assets/images/worker6.jpg',
       name: 'Mr. Ahmed Gamal',
       specialty: 'Wood Works',
       experience: '15 years',
@@ -341,7 +342,7 @@ Column(
         SizedBox(width: 20), // Space between the two doctor cards
         Expanded(
           child: DoctorCard(
-          imagePath: 'assets/images/Worker/worker4.jpg',
+          imagePath: 'assets/images/worker4.jpg',
       name: 'Mr. Michael Robert',
       specialty: 'Insect control worker',
       experience: '12 years',
@@ -354,7 +355,7 @@ Column(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                  imagePath: 'assets/images/Worker/worker4.jpg',
+                  imagePath: 'assets/images/worker4.jpg',
       name: 'Mr. Michael Robert',
       specialty: 'Insect control worker',
       experience: '12 years',
@@ -618,8 +619,30 @@ class DoctorProfile extends StatelessWidget {
               "Bio or additional details about the doctor would go here. You can include doctor's experience, qualifications, etc.",
               style: TextStyle(fontSize: 16),
             ),
-            Spacer(), // Push the button to the bottom of the screen
-Expanded(
+ Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Column(
+                children: [
+                     Divider(),
+                  ReviewItem(
+                    name: 'Sofian Moaz',
+                    profilePic: 'assets/images/profile.jpg', // Replace with your image path
+                    reviewDate: '4 May 2024',
+                    reviewText: 'غالى شوية بس شغله نضيف اوى وسريع ',
+                    rating: 4,
+                  ),
+                  Divider(),
+                  ReviewItem(
+                    name: 'Kerollos Gamil',
+                    profilePic: 'assets/images/profile.jpg', // Replace with your image path
+                    reviewDate: '3 February 2024',
+                    reviewText: 'الراجل شغله 10 من 10',
+                    rating: 5,
+                  ),
+                  Divider(),
+                ],
+              ),
+            ),Expanded(
   child: Align(
     alignment: Alignment.bottomCenter, // Align the button at the bottom
     child: ElevatedButton(
@@ -674,3 +697,4 @@ Expanded(
     );
   }
 }
+

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:service_link/view/screens/main_screen.dart';
 import 'package:service_link/view/screens/main_screens/OrderingPage.dart';
+import 'package:service_link/view/screens/main_screens/mainprofilescreen.dart';
 
 
 class TeacherPage extends StatelessWidget {
@@ -107,7 +108,7 @@ class TeacherPage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: [
                     DoctorCard(
-                      imagePath: 'assets/images/Teacher/teacher_math.jpg',
+                      imagePath: 'assets/images/teacher_math.jpg',
                       name: 'Mr. Mark Alonso',
                       specialty: 'Math',
                       experience: '10 years',
@@ -120,7 +121,7 @@ class TeacherPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                imagePath: 'assets/images/Teacher/teacher_math.jpg',
+                imagePath: 'assets/images/teacher_math.jpg',
                       name: 'Mr. Mark Alonso',
                       specialty: 'Math',
                       experience: '10 years',
@@ -134,7 +135,7 @@ class TeacherPage extends StatelessWidget {
                       },
                     ),
                     DoctorCard(
-                      imagePath: 'assets/images/Teacher/teacher3.jpg',
+                      imagePath: 'assets/images/teacher3.jpg',
                       name: 'Mr. Ahmed Gamal',
                       specialty: 'Arabic',
                       experience: '15 years',
@@ -147,7 +148,7 @@ class TeacherPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                imagePath: 'assets/images/Teacher/teacher3.jpg',
+                imagePath: 'assets/images/teacher3.jpg',
                       name: 'Mr. Ahmed Gamal',
                       specialty: 'Arabic',
                       experience: '15 years',
@@ -161,7 +162,7 @@ class TeacherPage extends StatelessWidget {
                       },
                     ),
                     DoctorCard(
-                      imagePath: 'assets/images/Teacher/teacher5.jpg',
+                      imagePath: 'assets/images/teacher5.jpg',
                       name: 'Mrs. Sarah Lee',
                       specialty: 'Science',
                       experience: '8 years',
@@ -174,7 +175,7 @@ class TeacherPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                             imagePath: 'assets/images/Teacher/teacher5.jpg',
+                             imagePath: 'assets/images/teacher5.jpg',
                       name: 'Mrs. Sarah Lee',
                       specialty: 'Science',
                       experience: '8 years',
@@ -188,7 +189,7 @@ class TeacherPage extends StatelessWidget {
                       },
                     ),
                     DoctorCard(
-                      imagePath: 'assets/images/Teacher/teacher2.jpg',
+                      imagePath: 'assets/images/teacher2.jpg',
                       name: 'Mr. Michael Robert',
                       specialty: 'Physics',
                       experience: '12 years',
@@ -201,7 +202,7 @@ class TeacherPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                             imagePath: 'assets/images/Teacher/teacher2.jpg',
+                             imagePath: 'assets/images/teacher2.jpg',
                       name: 'Mr. Michael Robert',
                       specialty: 'Physics',
                       experience: '12 years',
@@ -248,7 +249,7 @@ Column(
       children: [
         Expanded(
           child: DoctorCard(
-            imagePath: 'assets/images/Teacher/teacher2.jpg',
+            imagePath: 'assets/images/teacher2.jpg',
       name: 'Mr. Michael Robert',
       specialty: 'Physics',
       experience: '12 years',
@@ -261,7 +262,7 @@ Column(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                    imagePath: 'assets/images/Teacher/teacher2.jpg',
+                    imagePath: 'assets/images/teacher2.jpg',
       name: 'Mr. Michael Robert',
       specialty: 'Physics',
       experience: '12 years',
@@ -278,7 +279,7 @@ Column(
         const SizedBox(width: 20), // Space between the two doctor cards
         Expanded(
           child: DoctorCard(
-            imagePath: 'assets/images/Teacher/Teacher1.jpg',
+            imagePath: 'assets/images/Teacher1.jpg',
             name: 'Ms. Martin Matheo',
             specialty: 'biolegy',
             experience: '17 years',
@@ -291,7 +292,7 @@ Column(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                    imagePath: 'assets/images/Teacher/Teacher1.jpg',
+                    imagePath: 'assets/images/Teacher1.jpg',
             name: 'Ms. Martin Matheo',
             specialty: 'biolegy',
             experience: '17 years',
@@ -313,7 +314,7 @@ Column(
       children: [
         Expanded(
           child: DoctorCard(
-            imagePath: 'assets/images/Teacher/teacher_ph.jpg',
+            imagePath: 'assets/images/teacher_ph.jpg',
             name: 'Mr. John Clark',
             specialty: 'Physics',
             experience: '9 years',
@@ -326,7 +327,7 @@ Column(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                    imagePath: 'assets/images/Teacher/teacher_ph.jpg',
+                    imagePath: 'assets/images/teacher_ph.jpg',
             name: 'Mr. John Clark',
             specialty: 'Physics',
             experience: '9 years',
@@ -343,7 +344,7 @@ Column(
         const SizedBox(width: 20), // Space between the two doctor cards
         Expanded(
           child: DoctorCard(
-            imagePath: 'assets/images/Teacher/teacher3.jpg',
+            imagePath: 'assets/images/teacher3.jpg',
       name: 'Mr. Ahmed Gamal',
       specialty: 'Arabic',
       experience: '15 years',
@@ -356,7 +357,7 @@ Column(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                    imagePath: 'assets/images/Teacher/teacher3.jpg',
+                    imagePath: 'assets/images/teacher3.jpg',
       name: 'Mr. Ahmed Gamal',
       specialty: 'Arabic',
       experience: '15 years',
@@ -378,7 +379,7 @@ Column(
       children: [
         Expanded(
           child: DoctorCard(
-            imagePath: 'assets/images/Teacher/teacher5.jpg',
+            imagePath: 'assets/images/teacher5.jpg',
       name: 'Mrs. Sarah Lee',
       specialty: 'Science',
       experience: '8 years',
@@ -391,7 +392,7 @@ Column(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                    imagePath: 'assets/images/Teacher/teacher5.jpg',
+                    imagePath: 'assets/images/teacher5.jpg',
       name: 'Mrs. Sarah Lee',
       specialty: 'Science',
       experience: '8 years',
@@ -620,8 +621,30 @@ class DoctorProfile extends StatelessWidget {
               "Bio or additional details about the doctor would go here. You can include doctor's experience, qualifications, etc.",
               style: TextStyle(fontSize: 16),
             ),
-            const Spacer(), // Push the button to the bottom of the screen
-Expanded(
+ Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Column(
+                children: [
+                     Divider(),
+                  ReviewItem(
+                    name: 'Sofian Moaz',
+                    profilePic: 'assets/images/profile.jpg', // Replace with your image path
+                    reviewDate: '4 May 2024',
+                    reviewText: 'غالى شوية بس شغله نضيف اوى وسريع ',
+                    rating: 4,
+                  ),
+                  Divider(),
+                  ReviewItem(
+                    name: 'Kerollos Gamil',
+                    profilePic: 'assets/images/profile.jpg', // Replace with your image path
+                    reviewDate: '3 February 2024',
+                    reviewText: 'الراجل شغله 10 من 10',
+                    rating: 5,
+                  ),
+                  Divider(),
+                ],
+              ),
+            ),Expanded(
   child: Align(
     alignment: Alignment.bottomCenter, // Align the button at the bottom
     child: ElevatedButton(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:service_link/view/screens/main_screen.dart';
 import 'package:service_link/view/screens/main_screens/OrderingPage.dart';
+import 'package:service_link/view/screens/main_screens/mainprofilescreen.dart';
 
 
 class CleaningPage extends StatelessWidget {
@@ -105,7 +106,7 @@ class CleaningPage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                    children: [
                      DoctorCard(
-                       imagePath: 'assets/images/Cleaners/cleaner1-Photoroom.png',
+                       imagePath: 'assets/images/cleaner1-Photoroom.png',
                        name: 'Mr. Mark Alonso',
                        specialty: 'Home Cleaning',
                        experience: '8 years',
@@ -118,7 +119,7 @@ class CleaningPage extends StatelessWidget {
                            context,
                            MaterialPageRoute(
                              builder: (context) => DoctorProfile(
-                               imagePath: 'assets/images/Cleaners/cleaner1-Photoroom.png',
+                               imagePath: 'assets/images/cleaner1-Photoroom.png',
                        name: 'Mr. Mark Alonso',
                        specialty: 'Home Cleaning',
                        experience: '8 years',
@@ -132,7 +133,7 @@ class CleaningPage extends StatelessWidget {
                        },
                      ),
                      DoctorCard(
-                       imagePath: 'assets/images/Cleaners/clearner2-Photoroom.png',
+                       imagePath: 'assets/images/clearner2-Photoroom.png',
                        name: 'Mrs. Clara Wood',
                        specialty: 'School Cleaning',
                        experience: '15 years',
@@ -145,7 +146,7 @@ class CleaningPage extends StatelessWidget {
                            context,
                            MaterialPageRoute(
                              builder: (context) => DoctorProfile(
-                               imagePath: 'assets/images/Cleaners/clearner2-Photoroom.png',
+                               imagePath: 'assets/images/clearner2-Photoroom.png',
                        name: 'Mrs. Clara Wood',
                        specialty: 'School Cleaning',
                        experience: '15 years',
@@ -159,7 +160,7 @@ class CleaningPage extends StatelessWidget {
                        },
                      ),
                      DoctorCard(
-                       imagePath: 'assets/images/Cleaners/cleaner3-Photoroom.png',
+                       imagePath: 'assets/images/cleaner3-Photoroom.png',
                        name: 'Mrs. Sarah Lee',
                        specialty: 'Medical Cleaning',
                        experience: '9 years',
@@ -172,7 +173,7 @@ class CleaningPage extends StatelessWidget {
                            context,
                            MaterialPageRoute(
                              builder: (context) => DoctorProfile(
-                               imagePath: 'assets/images/Cleaners/cleaner3-Photoroom.png',
+                               imagePath: 'assets/images/cleaner3-Photoroom.png',
                        name: 'Mrs. Sarah Lee',
                        specialty: 'Medical Cleaning',
                        experience: '9 years',
@@ -186,7 +187,7 @@ class CleaningPage extends StatelessWidget {
                        },
                      ),
                      DoctorCard(
-                       imagePath: 'assets/images/Cleaners/cleaner4-Photoroom.png',
+                       imagePath: 'assets/images/cleaner4-Photoroom.png',
                        name: 'Mr. Michael Robert',
                        specialty: 'Environmental Cleaning',
                        experience: '12 years',
@@ -199,7 +200,7 @@ class CleaningPage extends StatelessWidget {
                            context,
                            MaterialPageRoute(
                              builder: (context) => DoctorProfile(
-                               imagePath: 'assets/images/Cleaners/cleaner4-Photoroom.png',
+                               imagePath: 'assets/images/cleaner4-Photoroom.png',
                        name: 'Mr. Michael Robert',
                        specialty: 'Environmental Cleaning',
                        experience: '12 years',
@@ -246,7 +247,7 @@ Column(
       children: [
         Expanded(
           child: DoctorCard(
-           imagePath: 'assets/images/Cleaners/cleaner1-Photoroom.png',
+           imagePath: 'assets/images/cleaner1-Photoroom.png',
       name: 'Mr. Mark Alonso',
       specialty: 'Home Cleaning',
       experience: '8 years',
@@ -259,7 +260,7 @@ Column(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                    imagePath: 'assets/images/Cleaners/cleaner1-Photoroom.png',
+                    imagePath: 'assets/images/cleaner1-Photoroom.png',
       name: 'Mr. Mark Alonso',
       specialty: 'Home Cleaning',
       experience: '8 years',
@@ -276,7 +277,7 @@ Column(
         SizedBox(width: 20), // Space between the two doctor cards
         Expanded(
           child: DoctorCard(
-            imagePath: 'assets/images/Cleaners/cleaner5-Photoroom.png',
+            imagePath: 'assets/images/cleaner5-Photoroom.png',
             name: 'Mr. Noah Johnson',
             specialty: 'Factory Cleaning',
             experience: '13 years',
@@ -289,7 +290,7 @@ Column(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-imagePath: 'assets/images/Cleaners/cleaner5-Photoroom.png',
+imagePath: 'assets/images/cleaner5-Photoroom.png',
             name: 'Mr. Noah Johnson',
             specialty: 'Factory Cleaning',
             experience: '13 years',
@@ -311,7 +312,7 @@ imagePath: 'assets/images/Cleaners/cleaner5-Photoroom.png',
       children: [
         Expanded(
           child: DoctorCard(
-            imagePath: 'assets/images/Cleaners/cleaner6-Photoroom.png',
+            imagePath: 'assets/images/cleaner6-Photoroom.png',
             name: 'Mr. Mark Wong',
             specialty: 'Company Cleaning',
             experience: '9 years',
@@ -324,7 +325,7 @@ imagePath: 'assets/images/Cleaners/cleaner5-Photoroom.png',
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                    imagePath: 'assets/images/Cleaners/cleaner6-Photoroom.png',
+                    imagePath: 'assets/images/cleaner6-Photoroom.png',
             name: 'Mr. Mark Wong',
             specialty: 'Company Cleaning',
             experience: '9 years',
@@ -341,7 +342,7 @@ imagePath: 'assets/images/Cleaners/cleaner5-Photoroom.png',
         SizedBox(width: 20), // Space between the two doctor cards
         Expanded(
           child: DoctorCard(
-            imagePath: 'assets/images/Cleaners/cleaner4-Photoroom.png',
+            imagePath: 'assets/images/cleaner4-Photoroom.png',
       name: 'Mr. Michael Robert',
       specialty: 'Environmental Cleaning',
       experience: '12 years',
@@ -354,7 +355,7 @@ imagePath: 'assets/images/Cleaners/cleaner5-Photoroom.png',
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                   imagePath: 'assets/images/Cleaners/cleaner4-Photoroom.png',
+                   imagePath: 'assets/images/cleaner4-Photoroom.png',
       name: 'Mr. Michael Robert',
       specialty: 'Environmental Cleaning',
       experience: '12 years',
@@ -376,7 +377,7 @@ imagePath: 'assets/images/Cleaners/cleaner5-Photoroom.png',
       children: [
         Expanded(
           child: DoctorCard(
-           imagePath: 'assets/images/Cleaners/cleaner3-Photoroom.png',
+           imagePath: 'assets/images/cleaner3-Photoroom.png',
       name: 'Mrs. Sarah Lee',
       specialty: 'Medical Cleaning',
       experience: '9 years',
@@ -389,7 +390,7 @@ imagePath: 'assets/images/Cleaners/cleaner5-Photoroom.png',
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                    imagePath: 'assets/images/Cleaners/cleaner3-Photoroom.png',
+                    imagePath: 'assets/images/cleaner3-Photoroom.png',
       name: 'Mrs. Sarah Lee',
       specialty: 'Medical Cleaning',
       experience: '9 years',
@@ -618,8 +619,30 @@ class DoctorProfile extends StatelessWidget {
               "Bio or additional details about the doctor would go here. You can include doctor's experience, qualifications, etc.",
               style: TextStyle(fontSize: 16),
             ),
-            Spacer(), // Push the button to the bottom of the screen
-Expanded(
+ Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Column(
+                children: [
+                     Divider(),
+                  ReviewItem(
+                    name: 'Sofian Moaz',
+                    profilePic: 'assets/images/profile.jpg', // Replace with your image path
+                    reviewDate: '4 May 2024',
+                    reviewText: 'غالى شوية بس شغله نضيف اوى وسريع ',
+                    rating: 4,
+                  ),
+                  Divider(),
+                  ReviewItem(
+                    name: 'Kerollos Gamil',
+                    profilePic: 'assets/images/profile.jpg', // Replace with your image path
+                    reviewDate: '3 February 2024',
+                    reviewText: 'الراجل شغله 10 من 10',
+                    rating: 5,
+                  ),
+                  Divider(),
+                ],
+              ),
+            ),Expanded(
   child: Align(
     alignment: Alignment.bottomCenter, // Align the button at the bottom
     child: ElevatedButton(

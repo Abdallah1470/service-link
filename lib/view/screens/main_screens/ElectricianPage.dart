@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:service_link/view/screens/main_screen.dart';
 import 'package:service_link/view/screens/main_screens/OrderingPage.dart';
+import 'package:service_link/view/screens/main_screens/mainprofilescreen.dart';
 
 
 class ElectricianPage extends StatelessWidget {
@@ -21,7 +22,7 @@ class ElectricianPage extends StatelessWidget {
           },
         ),
         title: Text(
-          'Doctors',
+          'Electricans',
           style: TextStyle(
             color: Colors.white,
             fontSize: 24,
@@ -38,7 +39,7 @@ class ElectricianPage extends StatelessWidget {
               TextField(
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.all(10),
-                  hintText: 'Search doctors...',
+                  hintText: 'Search electricans...',
                   prefixIcon: Icon(Icons.search, color: Colors.grey),
                   filled: true,
                   fillColor: Colors.grey[200],
@@ -105,11 +106,11 @@ class ElectricianPage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: [
                     DoctorCard(
-                      imagePath: 'assets/images/doctor1.jpg',
-                      name: 'Dr. Mark Alonso',
-                      specialty: 'Neonatology',
+                      imagePath: 'assets/images/elc1.jpg',
+                      name: 'Mr. Mark Alonso',
+                      specialty: 'Electrican',
                       experience: '10 years',
-                      qualification: 'MD, Pediatrics',
+                      qualification: 'Electrical Ciruits Dilpoma',
                       rating: 4.8,
                       workRegion: 'New York, NY',
                       priceStart: 150.0,
@@ -118,25 +119,25 @@ class ElectricianPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                imagePath: 'assets/images/doctor1.jpg',
-                name: 'Dr. Mark Alonso',
-                specialty: 'Neonatology',
-                experience: '10 years',
-                qualification: 'MD, Pediatrics',
-                rating: 4.8,
-                workRegion: 'New York, NY',
-                priceStart: 150.0,
+               imagePath: 'assets/images/elc1.jpg',
+                      name: 'Mr. Mark Alonso',
+                      specialty: 'Electrican',
+                      experience: '10 years',
+                      qualification: 'Electrical Ciruits Dilpoma',
+                      rating: 4.8,
+                      workRegion: 'New York, NY',
+                      priceStart: 150.0,
                             ),
                           ),
                         );
                       },
                     ),
                     DoctorCard(
-                      imagePath: 'assets/images/doctor2.jpg',
-                      name: 'Dr. Ahmed Gamal',
-                      specialty: 'Surgery',
+                      imagePath: 'assets/images/elc2.jpg',
+                      name: 'Mr. Alex semedo',
+                      specialty: 'Electrican',
                       experience: '15 years',
-                      qualification: 'MBBS, MS Surgery',
+                      qualification: 'Electrical Ciruits Dilpoma',
                       rating: 4.7,
                       workRegion: 'Cairo, Egypt',
                       priceStart: 200.0,
@@ -145,25 +146,25 @@ class ElectricianPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                imagePath: 'assets/images/doctor2.jpg',
-                name: 'Dr. Ahmed Gamal',
-                specialty: 'Surgery',
-                experience: '15 years',
-                qualification: 'MBBS, MS Surgery',
-                rating: 4.7,
-                workRegion: 'Cairo, Egypt',
-                priceStart: 200.0,
+               imagePath: 'assets/images/elc2.jpg',
+                      name: 'Mr. Alex semedo',
+                      specialty: 'Electrican',
+                      experience: '15 years',
+                      qualification: 'Electrical Ciruits Dilpoma',
+                      rating: 4.7,
+                      workRegion: 'Cairo, Egypt',
+                      priceStart: 200.0,
                             ),
                           ),
                         );
                       },
                     ),
                     DoctorCard(
-                      imagePath: 'assets/images/doctor3.png',
-                      name: 'Dr. Sarah Lee',
-                      specialty: 'Dermatology',
+                      imagePath: 'assets/images/elc3.jpg',
+                      name: 'Mr. Joe Nelson',
+                      specialty: 'Electrican',
                       experience: '8 years',
-                      qualification: 'MD, Dermatology',
+                      qualification: 'Electrical Ciruits Dilpoma',
                       rating: 4.9,
                       workRegion: 'San Francisco, CA',
                       priceStart: 180.0,
@@ -172,25 +173,25 @@ class ElectricianPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                imagePath: 'assets/images/doctor3.png',
-                name: 'Dr. Sarah Lee',
-                specialty: 'Dermatology',
-                experience: '8 years',
-                qualification: 'MD, Dermatology',
-                rating: 4.9,
-                workRegion: 'San Francisco, CA',
-                priceStart: 180.0,
+               imagePath: 'assets/images/elc3.jpg',
+                      name: 'Mr. Joe Nelson',
+                      specialty: 'Electrican',
+                      experience: '8 years',
+                      qualification: 'Electrical Ciruits Dilpoma',
+                      rating: 4.9,
+                      workRegion: 'San Francisco, CA',
+                      priceStart: 180.0,
                             ),
                           ),
                         );
                       },
                     ),
                     DoctorCard(
-                      imagePath: 'assets/images/doctor4.jpg',
-                      name: 'Dr. Michael Robert',
-                      specialty: 'Anesthesiology',
+                      imagePath: 'assets/images/elc4.jpg',
+                      name: 'Mr. Michael Robert',
+                      specialty: 'Electrican',
                       experience: '12 years',
-                      qualification: 'MD, Anesthesiology',
+                      qualification: 'Electrical Ciruits Dilpoma',
                       rating: 4.6,
                       workRegion: 'London, UK',
                       priceStart: 250.0,
@@ -199,14 +200,14 @@ class ElectricianPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                imagePath: 'assets/images/doctor4.jpg',
-                name: 'Dr. Michael Robert',
-                specialty: 'Anesthesiology',
-                experience: '12 years',
-                qualification: 'MD, Anesthesiology',
-                rating: 4.6,
-                workRegion: 'London, UK',
-                priceStart: 250.0,
+               imagePath: 'assets/images/elc4.jpg',
+                      name: 'Mr. Michael Robert',
+                      specialty: 'Electrican',
+                      experience: '12 years',
+                      qualification: 'Electrical Ciruits Dilpoma',
+                      rating: 4.6,
+                      workRegion: 'London, UK',
+                      priceStart: 250.0,
                             ),
                           ),
                         );
@@ -223,7 +224,7 @@ Row(
     Row(
       children: [
         Text(
-          'All Doctors',
+          'All Electricans',
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
       ],
@@ -246,11 +247,11 @@ Column(
       children: [
         Expanded(
           child: DoctorCard(
-            imagePath: 'assets/images/doctor2.jpg',
-            name: 'Dr. Emily Adams',
-            specialty: 'Cardiology',
+            imagePath: 'assets/images/elc5.jpg',
+            name: 'Mr. Cole Adams',
+            specialty: 'Electrican',
             experience: '20 years',
-            qualification: 'MD, Cardiology',
+            qualification: 'Electrical Ciruits Dilpoma',
             rating: 4.9,
             workRegion: 'New York, NY',
             priceStart: 150.0,
@@ -259,14 +260,14 @@ Column(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                    imagePath: 'assets/images/doctor2.jpg',
-                    name: 'Dr. Emily Adams',
-                    specialty: 'Cardiology',
-                    experience: '20 years',
-                    qualification: 'MD, Cardiology',
-                    rating: 4.9,
-                    workRegion: 'New York, NY',
-                    priceStart: 150.0,
+ imagePath: 'assets/images/elc5.jpg',
+            name: 'Mr. Cole Adams',
+            specialty: 'Electrican',
+            experience: '20 years',
+            qualification: 'Electrical Ciruits Dilpoma',
+            rating: 4.9,
+            workRegion: 'New York, NY',
+            priceStart: 150.0,
                   ),
                 ),
               );
@@ -276,27 +277,27 @@ Column(
         SizedBox(width: 20), // Space between the two doctor cards
         Expanded(
           child: DoctorCard(
-            imagePath: 'assets/images/doctor1.jpg',
-            name: 'Dr. Liam Johnson',
-            specialty: 'Neurology',
-            experience: '17 years',
-            qualification: 'MD, Neurology',
-            rating: 4.7,
-            workRegion: 'Los Angeles, CA',
-            priceStart: 180.0,
+             imagePath: 'assets/images/elc2.jpg',
+                      name: 'Mr. Alex semedo',
+                      specialty: 'Electrican',
+                      experience: '15 years',
+                      qualification: 'Electrical Ciruits Dilpoma',
+                      rating: 4.7,
+                      workRegion: 'Cairo, Egypt',
+                      priceStart: 200.0,
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                    imagePath: 'assets/images/doctor1.jpg',
-                    name: 'Dr. Liam Johnson',
-                    specialty: 'Neurology',
-                    experience: '17 years',
-                    qualification: 'MD, Neurology',
-                    rating: 4.7,
-                    workRegion: 'Los Angeles, CA',
-                    priceStart: 180.0,
+                    imagePath: 'assets/images/elc2.jpg',
+                      name: 'Mr. Alex semedo',
+                      specialty: 'Electrican',
+                      experience: '15 years',
+                      qualification: 'Electrical Ciruits Dilpoma',
+                      rating: 4.7,
+                      workRegion: 'Cairo, Egypt',
+                      priceStart: 200.0,
                   ),
                 ),
               );
@@ -311,27 +312,27 @@ Column(
       children: [
         Expanded(
           child: DoctorCard(
-            imagePath: 'assets/images/doctor4.jpg',
-            name: 'Dr. Clara Wong',
-            specialty: 'Oncology',
-            experience: '9 years',
-            qualification: 'MD, Oncology',
-            rating: 4.8,
-            workRegion: 'Chicago, IL',
-            priceStart: 200.0,
+           imagePath: 'assets/images/elc3.jpg',
+                      name: 'Mr. Joe Nelson',
+                      specialty: 'Electrican',
+                      experience: '8 years',
+                      qualification: 'Electrical Ciruits Dilpoma',
+                      rating: 4.9,
+                      workRegion: 'San Francisco, CA',
+                      priceStart: 180.0,
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                    imagePath: 'assets/images/doctor4.jpg',
-                    name: 'Dr. Clara Wong',
-                    specialty: 'Oncology',
-                    experience: '9 years',
-                    qualification: 'MD, Oncology',
-                    rating: 4.8,
-                    workRegion: 'Chicago, IL',
-                    priceStart: 200.0,
+                    imagePath: 'assets/images/elc3.jpg',
+                      name: 'Mr. Joe Nelson',
+                      specialty: 'Electrican',
+                      experience: '8 years',
+                      qualification: 'Electrical Ciruits Dilpoma',
+                      rating: 4.9,
+                      workRegion: 'San Francisco, CA',
+                      priceStart: 180.0,
                   ),
                 ),
               );
@@ -341,27 +342,27 @@ Column(
         SizedBox(width: 20), // Space between the two doctor cards
         Expanded(
           child: DoctorCard(
-            imagePath: 'assets/images/doctor4.jpg',
-            name: 'Dr. Clara Wong',
-            specialty: 'Oncology',
-            experience: '9 years',
-            qualification: 'MD, Oncology',
-            rating: 4.8,
-            workRegion: 'Chicago, IL',
-            priceStart: 200.0,
+            imagePath: 'assets/images/elc1.jpg',
+                      name: 'Mr. Mark Alonso',
+                      specialty: 'Electrican',
+                      experience: '10 years',
+                      qualification: 'Electrical Ciruits Dilpoma',
+                      rating: 4.8,
+                      workRegion: 'New York, NY',
+                      priceStart: 150.0,
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                    imagePath: 'assets/images/doctor4.jpg',
-                    name: 'Dr. Clara Wong',
-                    specialty: 'Oncology',
-                    experience: '9 years',
-                    qualification: 'MD, Oncology',
-                    rating: 4.8,
-                    workRegion: 'Chicago, IL',
-                    priceStart: 200.0,
+                  imagePath: 'assets/images/elc1.jpg',
+                      name: 'Mr. Mark Alonso',
+                      specialty: 'Electrican',
+                      experience: '10 years',
+                      qualification: 'Electrical Ciruits Dilpoma',
+                      rating: 4.8,
+                      workRegion: 'New York, NY',
+                      priceStart: 150.0,
                   ),
                 ),
               );
@@ -376,27 +377,27 @@ Column(
       children: [
         Expanded(
           child: DoctorCard(
-            imagePath: 'assets/images/doctor4.jpg',
-            name: 'Dr. Clara Wong',
-            specialty: 'Oncology',
-            experience: '9 years',
-            qualification: 'MD, Oncology',
-            rating: 4.8,
-            workRegion: 'Chicago, IL',
-            priceStart: 200.0,
+           imagePath: 'assets/images/elc4.jpg',
+                      name: 'Mr. Michael Robert',
+                      specialty: 'Electrican',
+                      experience: '12 years',
+                      qualification: 'Electrical Ciruits Dilpoma',
+                      rating: 4.6,
+                      workRegion: 'London, UK',
+                      priceStart: 250.0,
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DoctorProfile(
-                    imagePath: 'assets/images/doctor4.jpg',
-                    name: 'Dr. Clara Wong',
-                    specialty: 'Oncology',
-                    experience: '9 years',
-                    qualification: 'MD, Oncology',
-                    rating: 4.8,
-                    workRegion: 'Chicago, IL',
-                    priceStart: 200.0,
+                 imagePath: 'assets/images/elc4.jpg',
+                      name: 'Mr. Michael Robert',
+                      specialty: 'Electrican',
+                      experience: '12 years',
+                      qualification: 'Electrical Ciruits Dilpoma',
+                      rating: 4.6,
+                      workRegion: 'London, UK',
+                      priceStart: 250.0,
                   ),
                 ),
               );
@@ -615,10 +616,36 @@ class DoctorProfile extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              "Bio or additional details about the doctor would go here. You can include doctor's experience, qualifications, etc.",
+              "Bio or additional details about the worker would go here. You can include his experience, rating, etc.",
               style: TextStyle(fontSize: 16),
             ),
-            Spacer(), // Push the button to the bottom of the screen
+            SizedBox(height: 10),
+              Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Column(
+                children: [
+                     Divider(),
+                  ReviewItem(
+                    name: 'Sofian Moaz',
+                    profilePic: 'assets/images/profile.jpg', // Replace with your image path
+                    reviewDate: '4 May 2024',
+                    reviewText: 'غالى شوية بس شغله نضيف اوى وسريع ',
+                    rating: 4,
+                  ),
+                  Divider(),
+                  ReviewItem(
+                    name: 'Kerollos Gamil',
+                    profilePic: 'assets/images/profile.jpg', // Replace with your image path
+                    reviewDate: '3 February 2024',
+                    reviewText: 'الراجل شغله 10 من 10',
+                    rating: 5,
+                  ),
+                  Divider(),
+                ],
+              ),
+            ),
+
+            
 Expanded(
   child: Align(
     alignment: Alignment.bottomCenter, // Align the button at the bottom

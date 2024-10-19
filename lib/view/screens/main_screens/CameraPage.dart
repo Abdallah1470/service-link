@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:service_link/view/screens/main_screen.dart';
 import 'package:service_link/view/screens/main_screens/OrderingPage.dart';
+import 'package:service_link/view/screens/main_screens/profile_screen.dart';
 
 class CameraPage extends StatelessWidget {
   @override
@@ -105,7 +106,7 @@ class CameraPage extends StatelessWidget {
             scrollDirection: Axis.horizontal,
                   children: [
                     DoctorCard(
-                      imagePath: 'assets/images/Camera/camera1-Photoroom.png',
+                      imagePath: 'assets/images/camera1.jpg',
                       name: 'Mr. Tom Walker',
                       specialty: 'Photo sessions',
                       experience: '10 years',
@@ -118,8 +119,7 @@ class CameraPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                              imagePath:
-                                  'assets/images/Camera/camera1-Photoroom.png',
+                      imagePath: 'assets/images/camera1.jpg',
                               name: 'Mr. Tom Walker',
                               specialty: 'Photo sessions',
                               experience: '10 years',
@@ -133,7 +133,7 @@ class CameraPage extends StatelessWidget {
                       },
                     ),
                     DoctorCard(
-                      imagePath: 'assets/images/Camera/camera2-Photoroom.png',
+                      imagePath: 'assets/images/camera2.jpg',
                       name: 'Mr. Mark Alonso',
                       specialty: 'Wedding Photographer',
                       experience: '15 years',
@@ -146,8 +146,7 @@ class CameraPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                              imagePath:
-                                  'assets/images/Camera/camera2-Photoroom.png',
+                      imagePath: 'assets/images/camera2.jpg',
                               name: 'Mr. Mark Alonso',
                               specialty: 'Wedding Photographer',
                               experience: '15 years',
@@ -161,7 +160,7 @@ class CameraPage extends StatelessWidget {
                       },
                     ),
                     DoctorCard(
-                      imagePath: 'assets/images/Camera/camera3-Photoroom.png',
+                      imagePath: 'assets/images/camera3.jpg',
                       name: 'Mr. Edward Weston',
                       specialty: 'Sports photographer',
                       experience: '12 years',
@@ -174,8 +173,7 @@ class CameraPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                              imagePath:
-                                  'assets/images/Camera/camera3-Photoroom.png',
+                      imagePath: 'assets/images/camera3.jpg',
                               name: 'Mr. Edward Weston',
                               specialty: 'Sports photographer',
                               experience: '12 years',
@@ -189,7 +187,7 @@ class CameraPage extends StatelessWidget {
                       },
                     ),
                     DoctorCard(
-                      imagePath: 'assets/images/Camera/camera5-Photoroom.png',
+                      imagePath: 'assets/images/camera5.jpg',
                       name: 'Dr. Michael Robert',
                       specialty: 'Portrait photography',
                       experience: '8 years',
@@ -202,8 +200,7 @@ class CameraPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DoctorProfile(
-                              imagePath:
-                                  'assets/images/Camera/camera5-Photoroom.png',
+                                 imagePath: 'assets/images/camera5.jpg',
                               name: 'Dr. Michael Robert',
                               specialty: 'Portrait photography',
                               experience: '8 years',
@@ -250,8 +247,7 @@ class CameraPage extends StatelessWidget {
                     children: [
                       Expanded(
                         child: DoctorCard(
-                          imagePath:
-                              'assets/images/Camera/camera6-Photoroom.png',
+                      imagePath: 'assets/images/camera6.jpg',
                           name: 'Dr. John Adams',
                           specialty: 'Aerial photography',
                           experience: '17 years',
@@ -265,7 +261,7 @@ class CameraPage extends StatelessWidget {
                               MaterialPageRoute(
                                 builder: (context) => DoctorProfile(
                                   imagePath:
-                                      'assets/images/Camera/camera6-Photoroom.png',
+                                      'assets/images/camera6.jpg',
                                   name: 'Dr. John Adams',
                                   specialty: 'Aerial photography',
                                   experience: '17 years',
@@ -282,8 +278,7 @@ class CameraPage extends StatelessWidget {
                       SizedBox(width: 20), // Space between the two doctor cards
                       Expanded(
                         child: DoctorCard(
-                          imagePath:
-                              'assets/images/Camera/camera2-Photoroom.png',
+                      imagePath: 'assets/images/camera2.jpg',
                           name: 'Mr. Mark Alonso',
                           specialty: 'Wedding Photographer',
                           experience: '15 years',
@@ -296,8 +291,7 @@ class CameraPage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => DoctorProfile(
-                                  imagePath:
-                                      'assets/images/Camera/camera2-Photoroom.png',
+                                    imagePath: 'assets/images/camera2.jpg',
                                   name: 'Mr. Mark Alonso',
                                   specialty: 'Wedding Photographer',
                                   experience: '15 years',
@@ -319,8 +313,7 @@ class CameraPage extends StatelessWidget {
                     children: [
                       Expanded(
                         child: DoctorCard(
-                          imagePath:
-                              'assets/images/Camera/camera1-Photoroom.png',
+                       imagePath: 'assets/images/camera1.jpg',
                           name: 'Mr. Tom Walker',
                           specialty: 'Photo sessions',
                           experience: '10 years',
@@ -333,8 +326,7 @@ class CameraPage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => DoctorProfile(
-                                  imagePath:
-                                      'assets/images/Camera/camera1-Photoroom.png',
+                              imagePath: 'assets/images/camera1.jpg',
                                   name: 'Mr. Tom Walker',
                                   specialty: 'Photo sessions',
                                   experience: '10 years',
@@ -351,8 +343,7 @@ class CameraPage extends StatelessWidget {
                       SizedBox(width: 20), // Space between the two doctor cards
                       Expanded(
                         child: DoctorCard(
-                          imagePath:
-                              'assets/images/Camera/camera5-Photoroom.png',
+                       imagePath: 'assets/images/camera5.jpg',
                           name: 'Dr. Michael Robert',
                           specialty: 'Portrait photography',
                           experience: '8 years',
@@ -365,8 +356,7 @@ class CameraPage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => DoctorProfile(
-                                  imagePath:
-                                      'assets/images/Camera/camera5-Photoroom.png',
+                 imagePath: 'assets/images/camera5.jpg',
                                   name: 'Dr. Michael Robert',
                                   specialty: 'Portrait photography',
                                   experience: '8 years',
@@ -388,8 +378,7 @@ class CameraPage extends StatelessWidget {
                     children: [
                       Expanded(
                         child: DoctorCard(
-                          imagePath:
-                              'assets/images/Camera/camera3-Photoroom.png',
+                       imagePath: 'assets/images/camera3.jpg',
                           name: 'Mr. Edward Weston',
                           specialty: 'Sports photographer',
                           experience: '12 years',
@@ -402,8 +391,7 @@ class CameraPage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => DoctorProfile(
-                                  imagePath:
-                                      'assets/images/Camera/camera3-Photoroom.png',
+                     imagePath: 'assets/images/camera3.jpg',
                                   name: 'Mr. Edward Weston',
                                   specialty: 'Sports photographer',
                                   experience: '12 years',
@@ -639,7 +627,33 @@ class DoctorProfile extends StatelessWidget {
               "Bio or additional details about the doctor would go here. You can include doctor's experience, qualifications, etc.",
               style: TextStyle(fontSize: 16),
             ),
-            Spacer(), // Push the button to the bottom of the screen
+SizedBox(height: 10),
+            // Review Section in the Profile Page
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Column(
+                children: [
+                     Divider(),
+                  ReviewItem(
+                    name: 'Sofian Moaz',
+                    profilePic: 'assets/images/profile.jpg', // Replace with your image path
+                    reviewDate: '4 May 2024',
+                    reviewText: 'غالى شوية بس شغله نضيف اوى وسريع ',
+                    rating: 4,
+                  ),
+                  Divider(),
+                  ReviewItem(
+                    name: 'Kerollos Gamil',
+                    profilePic: 'assets/images/profile.jpg', // Replace with your image path
+                    reviewDate: '3 February 2024',
+                    reviewText: 'الراجل شغله 10 من 10',
+                    rating: 5,
+                  ),
+                  Divider(),
+                ],
+              ),
+            ),
+
             Expanded(
               child: Align(
                 alignment: Alignment.bottomCenter,
